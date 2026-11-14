@@ -115,6 +115,25 @@ final class KeepADBNetworkDecision {
     }
 
     /**
+     * #949: the recorded access points that can still be answered, newest first: what the
+     * Networks list shows as "Recently asked" after a prompt was swiped away. An access point
+     * that has been trusted or blocked in the meantime is left out, and so is {@code
+     * excludeBssid} (the current network, which the list already asks about in its own card).
+     */
+    static java.util.List<KeepADBBlockedNetworkHistory.Entry> recentUndecided(Context context,
+                                                                             String excludeBssid) {
+        java.util.List<KeepADBBlockedNetworkHistory.Entry> result = new java.util.ArrayList<>();
+        java.util.List<KeepADBBlockedNetworkHistory.Entry> entries =
+                KeepADBBlockedNetworkHistory.getEntries(context);
+        for (int i = entries.size() - 1; i >= 0; i--) {
+            KeepADBBlockedNetworkHistory.Entry entry = entries.get(i);
+            if (excludeBssid != null && entry.bssid.equalsIgnoreCase(excludeBssid.trim())) continue;
+            if (resolve(context, entry.bssid).status == Status.PENDING) result.add(entry);
+        }
+        return result;
+    }
+
+    /**
      * Trusts exactly {@code pending.bssid}. A blocked network is refused and reported as such, not
      * as a failure of the app (#760).
      */

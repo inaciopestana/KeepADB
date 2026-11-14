@@ -62,18 +62,20 @@ public class KeepADBSettingsMenuTest {
             KeepADBSettingsMenu.ID_LANGUAGE, KeepADBSettingsMenu.ID_DIVIDER_1,
             KeepADBSettingsMenu.ID_ALL_SETTINGS, KeepADBSettingsMenu.ID_DIVIDER_2,
             KeepADBSettingsMenu.ID_SETUP_ASSISTANT, KeepADBSettingsMenu.ID_NETWORK,
+            KeepADBSettingsMenu.ID_NETWORKS,
             KeepADBSettingsMenu.ID_WEBHOOK, KeepADBSettingsMenu.ID_USB_ADB,
             KeepADBSettingsMenu.ID_PRIVACY, KeepADBSettingsMenu.ID_MISC,
             KeepADBSettingsMenu.ID_DIAGNOSTICS};
     private static final int[] TITLES = {
             R.string.menu_item_language, 0, R.string.menu_item_all_settings, 0,
             R.string.settings_onboarding_title, R.string.settings_section_network,
+            R.string.networks_title,
             R.string.settings_section_webhook, R.string.settings_section_usb_adb,
             R.string.privacy_switches_title, R.string.settings_section_misc,
             R.string.settings_diagnostics_title};
     private static final int[] ICONS = {
             R.drawable.ic_language, 0, R.drawable.ic_settings_gear, 0,
-            R.drawable.ic_settings_assistant, R.drawable.ic_settings_network,
+            R.drawable.ic_settings_assistant, R.drawable.ic_settings_network, R.drawable.ic_wifi,
             R.drawable.ic_settings_sync, R.drawable.ic_usb, R.drawable.ic_settings_privacy,
             R.drawable.ic_more_horiz, R.drawable.ic_settings_diagnostics};
 
@@ -140,6 +142,17 @@ public class KeepADBSettingsMenuTest {
     public void networkItemLaunchesSettingsWithNetworkCardExtra() {
         assertOpensSettingsWith(KeepADBSettingsMenu.ID_NETWORK,
                 SettingsActivity.EXTRA_FOCUS_NETWORK_CARD);
+    }
+
+    @Test
+    public void networksItemOpensTheNetworksListDirectly() {
+        KeepADBSettingsMenu menu = openMenu();
+        menu.onMenuItemClicked(item(menu, KeepADBSettingsMenu.ID_NETWORKS));
+
+        assertFalse(menu.isShowing());
+        Intent nextIntent = shadowOf(activity).getNextStartedActivity();
+        assertNotNull(nextIntent);
+        assertEquals(NetworkListActivity.class.getName(), nextIntent.getComponent().getClassName());
     }
 
     @Test

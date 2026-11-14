@@ -80,6 +80,8 @@ final class KeepADBNetworkCard {
     private final TextView networkDetectionNow;
     private final Button backgroundLocationButton;
     private final TextView networkNetworksCount;
+    /** #949: opens the Networks list on the current access point, where it can be blocked. */
+    private final Button networkStatusDecide;
 
     /**
      * What {@link #networkStatusAction} does right now and which access point it is bound to,
@@ -122,8 +124,14 @@ final class KeepADBNetworkCard {
         networkDetectionNow = activity.findViewById(R.id.network_detection_now);
         backgroundLocationButton = activity.findViewById(R.id.settings_background_location_button);
         networkNetworksCount = activity.findViewById(R.id.network_networks_count);
+        networkStatusDecide = activity.findViewById(R.id.network_status_decide);
 
         networkStatusAction.setOnClickListener(v -> onNetworkStatusActionClicked());
+        // #949: the bound access point, not whatever is connected at click time; the list asks
+        // the question itself (trust, block the access point, block the name) and follows the
+        // privacy mode on its own.
+        networkStatusDecide.setOnClickListener(v -> activity.startActivity(
+                NetworkListActivity.intent(activity, networkActionBssid)));
         // #616/#644: never grants anything; the user picks "Allow all the time" on the system
         // page. Without the grant, the rationale dialog comes first (step 2); with it, the button
         // goes straight to the page so the grant can still be checked or revoked.
@@ -392,6 +400,10 @@ final class KeepADBNetworkCard {
         String ssid = identity.isKnown() ? identity.displaySsid() : null;
         networkActionBssid = identity.isKnown() ? identity.bssid : null;
         networkActionLabel = (ssid == null || ssid.isEmpty()) ? networkActionBssid : ssid;
+
+        networkStatusDecide.setVisibility(
+                state.action == KeepADBNetworkCardState.Action.ALLOW_ACCESS_POINT
+                        && networkActionBssid != null ? View.VISIBLE : View.GONE);
 
         int label = KeepADBNetworkCardText.action(state.action);
         if (label == 0) {

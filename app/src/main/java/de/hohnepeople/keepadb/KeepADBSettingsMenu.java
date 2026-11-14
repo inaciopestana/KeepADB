@@ -38,6 +38,8 @@ final class KeepADBSettingsMenu {
     static final int ID_DIVIDER_2 = -2;
     static final int ID_SETUP_ASSISTANT = 4;
     static final int ID_NETWORK = 5;
+    /** #949: the Networks list itself, one tap from Home. */
+    static final int ID_NETWORKS = 14;
     static final int ID_WEBHOOK = 6;
     static final int ID_USB_ADB = 7;
     static final int ID_PRIVACY = 12;
@@ -122,6 +124,7 @@ final class KeepADBSettingsMenu {
                 R.drawable.ic_settings_assistant));
         menu.add(MenuItem.link(ID_NETWORK, R.string.settings_section_network,
                 R.drawable.ic_settings_network));
+        menu.add(MenuItem.link(ID_NETWORKS, R.string.networks_title, R.drawable.ic_wifi));
         menu.add(MenuItem.link(ID_WEBHOOK, R.string.settings_section_webhook,
                 R.drawable.ic_settings_sync));
         menu.add(MenuItem.link(ID_USB_ADB, R.string.settings_section_usb_adb, R.drawable.ic_usb));
@@ -146,6 +149,9 @@ final class KeepADBSettingsMenu {
                 return;
             case ID_NETWORK:
                 openSettingsAt(activity, SettingsActivity.EXTRA_FOCUS_NETWORK_CARD);
+                return;
+            case ID_NETWORKS:
+                activity.startActivity(NetworkListActivity.intent(activity));
                 return;
             case ID_WEBHOOK:
                 openSettingsAt(activity, SettingsActivity.EXTRA_FOCUS_WEBHOOK);

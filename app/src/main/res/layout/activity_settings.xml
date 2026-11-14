@@ -310,6 +310,24 @@
                         android:textSize="15sp"
                         android:visibility="gone" />
 
+                    <!-- #949: block or decide the current network in the Networks list. -->
+                    <Button
+                        android:id="@+id/network_status_decide"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_btn_secondary"
+                        android:fontFamily="sans-serif-condensed"
+                        android:minHeight="48dp"
+                        android:paddingStart="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/network_action_decide"
+                        android:textColor="@color/text_yellow"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+
                     <!-- #654: shown only while the privacy mode hides names and addresses. -->
                     <TextView
                         android:id="@+id/network_privacy_hint"

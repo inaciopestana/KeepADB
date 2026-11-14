@@ -683,4 +683,16 @@ Pode terminá-lo a qualquer momento no ecrã inicial ou na notificação.</strin
     <string name="overview_last_delivery_none">Nenhuma entrega ainda</string>
     <string name="overview_last_delivery_short">Últ. %1$s</string>
     <string name="overview_last_delivery_short_none">Nenhuma</string>
+    <!-- #949: recently asked networks and the ways to block or decide -->
+    <string name="networks_section_recent">Perguntadas recentemente</string>
+    <string name="networks_section_settings">Configurações</string>
+    <string name="networks_recent_hint">O KeepADB perguntou sobre estas redes Wi-Fi e não obteve resposta, por exemplo porque a notificação foi descartada.</string>
+    <string name="networks_recent_asked">Visto pela última vez %1$s</string>
+    <string name="networks_recent_decide">Decidir…</string>
+    <string name="networks_recent_decide_a11y">Decidir sobre %1$s</string>
+    <string name="networks_recent_remove">Remover</string>
+    <string name="networks_recent_remove_a11y">Remover %1$s desta lista</string>
+    <string name="network_action_decide">Bloquear ou decidir…</string>
+    <string name="status_on_network_untrusted">O Keep-Alive não o reativará aqui: esta rede Wi-Fi não é fiável</string>
+    <string name="status_on_network_blocked">O Keep-Alive não o reativará aqui: esta rede Wi-Fi está bloqueada</string>
 </resources>

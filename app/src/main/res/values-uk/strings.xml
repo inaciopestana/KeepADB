@@ -684,4 +684,16 @@
     <string name="overview_last_delivery_none">Доставок ще не було</string>
     <string name="overview_last_delivery_short">Ост. %1$s</string>
     <string name="overview_last_delivery_short_none">Ще немає</string>
+    <!-- #949: recently asked networks and the ways to block or decide -->
+    <string name="networks_section_recent">Нещодавні запити</string>
+    <string name="networks_section_settings">Налаштування</string>
+    <string name="networks_recent_hint">KeepADB питав про ці мережі Wi-Fi і не отримав відповіді, наприклад тому що сповіщення було змахнуто.</string>
+    <string name="networks_recent_asked">Востаннє: %1$s</string>
+    <string name="networks_recent_decide">Вирішити…</string>
+    <string name="networks_recent_decide_a11y">Вирішити для %1$s</string>
+    <string name="networks_recent_remove">Прибрати</string>
+    <string name="networks_recent_remove_a11y">Прибрати %1$s з цього списку</string>
+    <string name="network_action_decide">Заблокувати або вирішити…</string>
+    <string name="status_on_network_untrusted">Keep-Alive не ввімкне його тут знову: ця мережа Wi-Fi не є довіреною</string>
+    <string name="status_on_network_blocked">Keep-Alive не ввімкне його тут знову: ця мережа Wi-Fi заблокована</string>
 </resources>

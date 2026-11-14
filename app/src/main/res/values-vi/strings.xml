@@ -681,4 +681,16 @@ Bạn có thể kết thúc bất cứ lúc nào từ màn hình chính hoặc t
     <string name="overview_last_delivery_none">Chưa gửi lần nào</string>
     <string name="overview_last_delivery_short">Lần cuối %1$s</string>
     <string name="overview_last_delivery_short_none">Chưa có</string>
+    <!-- #949: recently asked networks and the ways to block or decide -->
+    <string name="networks_section_recent">Đã hỏi gần đây</string>
+    <string name="networks_section_settings">Cài đặt</string>
+    <string name="networks_recent_hint">KeepADB đã hỏi về các mạng Wi-Fi này nhưng không nhận được câu trả lời, ví dụ vì thông báo đã bị vuốt đi.</string>
+    <string name="networks_recent_asked">Thấy lần cuối %1$s</string>
+    <string name="networks_recent_decide">Quyết định…</string>
+    <string name="networks_recent_decide_a11y">Quyết định cho %1$s</string>
+    <string name="networks_recent_remove">Xóa</string>
+    <string name="networks_recent_remove_a11y">Xóa %1$s khỏi danh sách này</string>
+    <string name="network_action_decide">Chặn hoặc quyết định…</string>
+    <string name="status_on_network_untrusted">Keep-Alive sẽ không bật lại ở đây: mạng Wi-Fi này không tin cậy</string>
+    <string name="status_on_network_blocked">Keep-Alive sẽ không bật lại ở đây: mạng Wi-Fi này đã bị chặn</string>
 </resources>

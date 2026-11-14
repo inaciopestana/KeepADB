@@ -145,6 +145,34 @@ public class SettingsNetworkCardTest {
         assertEquals(View.GONE, activity.findViewById(R.id.network_status_action).getVisibility());
     }
 
+    /**
+     * #949: an undecided access point can also be blocked from here: the second button opens the
+     * Networks list on the access point the card showed, where the list asks the full question.
+     * Control: a trusted access point offers neither button.
+     */
+    @Test
+    public void aNotAllowedAccessPointOffersBlockOrDecideOnTheNetworksListAndAnAllowedOneDoesNot() {
+        KeepADBTrustedNetwork.setMode(context, KeepADBTrustedNetwork.MODE_ALLOWLIST);
+        connectTo("HomeMesh", "aa:bb:cc:dd:ee:01");
+
+        SettingsActivity activity = open();
+        Button decide = activity.findViewById(R.id.network_status_decide);
+        assertEquals(View.VISIBLE, decide.getVisibility());
+        assertEquals(context.getString(R.string.network_action_decide), decide.getText().toString());
+        decide.performClick();
+        android.content.Intent intent =
+                org.robolectric.Shadows.shadowOf(activity).getNextStartedActivity();
+        assertNotNull(intent);
+        assertEquals(NetworkListActivity.class.getName(), intent.getComponent().getClassName());
+        assertEquals("aa:bb:cc:dd:ee:01",
+                intent.getStringExtra(NetworkListActivity.EXTRA_FOCUS_BSSID));
+        assertTrue("Opening the list decides nothing", KeepADBTrustedNetwork.getEntries(context).isEmpty());
+
+        KeepADBTrustedNetwork.addBssid(context, "aa:bb:cc:dd:ee:01", "HomeMesh");
+        SettingsActivity trusted = open();
+        assertEquals(View.GONE, trusted.findViewById(R.id.network_status_decide).getVisibility());
+    }
+
     @Test
     public void aMaskedCardCannotAllowBlindAndItsToastStaysMaskedAfterShowOnThisScreen() {
         preparedForAnAutomaticEnable();

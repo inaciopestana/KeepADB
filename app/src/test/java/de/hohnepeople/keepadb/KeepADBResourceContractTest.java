@@ -658,6 +658,11 @@ public class KeepADBResourceContractTest {
                 "networks_name_blocked_toast", "networks_name_unblocked_toast"}) {
             result.put(key, new Object[] {stringWitness});
         }
+        // #949: recently asked networks.
+        for (String key : new String[] {"networks_recent_asked", "networks_recent_decide_a11y",
+                "networks_recent_remove_a11y"}) {
+            result.put(key, new Object[] {stringWitness});
+        }
         result.put("networks_group_saved", new Object[] {integerWitness});
         result.put("networks_count", new Object[] {integerWitness, integerWitness});
         result.put("network_head_mode", new Object[] {stringWitness});

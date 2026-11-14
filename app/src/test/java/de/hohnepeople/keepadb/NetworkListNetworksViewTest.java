@@ -610,6 +610,127 @@ public class NetworkListNetworksViewTest {
         controller.pause().stop().destroy();
     }
 
+    // --- Recently asked (#949) ---------------------------------------------------------------
+
+    private static final String STORE = "Markt WLAN";
+    private static final String STORE_AP = "de:ad:be:ef:00:01";
+
+    private void recordPrompt(String ssid, String bssid, long at) {
+        KeepADBBlockedNetworkHistory.record(context, new KeepADBNetworkIdentity(ssid, bssid), at);
+    }
+
+    @Test
+    public void recentlyAskedNetworksStandBetweenCurrentAndSavedNewestFirstAndTheSettingsComeLast() {
+        KeepADBPreferences.setAppPrivacyEnabled(context, false);
+        connectTo(HOME, KITCHEN);
+        KeepADBTrustedNetwork.addBssid(context, HALL, HOME);
+        long now = System.currentTimeMillis();
+        recordPrompt(CAFE, CAFE_AP, now - 3_600_000L);
+        recordPrompt(STORE, STORE_AP, now - 60_000L);
+
+        String all = everythingShown(open());
+
+        int current = all.indexOf(context.getString(R.string.networks_section_current));
+        int recent = all.indexOf(context.getString(R.string.networks_section_recent));
+        int saved = all.indexOf(context.getString(R.string.networks_section_saved));
+        int settings = all.indexOf(context.getString(R.string.networks_section_settings));
+        int glossary = all.indexOf(context.getString(R.string.networks_glossary_toggle));
+        assertTrue(all, current >= 0 && recent > current && saved > recent);
+        assertTrue("Settings and glossary follow the networks: " + all,
+                settings > saved && glossary > settings
+                        && all.indexOf(context.getString(R.string.networks_comfort_title)) > settings);
+        int store = all.indexOf(STORE);
+        int cafe = all.indexOf(CAFE);
+        assertTrue("Newest first: " + all, store > recent && cafe > store && cafe < saved);
+        assertTrue(all, all.contains(STORE_AP.toUpperCase(Locale.ROOT)));
+    }
+
+    @Test
+    public void decidedAndCurrentAccessPointsAreNotRecentlyAskedAndWithoutEntriesThereIsNoSection() {
+        KeepADBPreferences.setAppPrivacyEnabled(context, false);
+        connectTo(STORE, STORE_AP);
+        long now = System.currentTimeMillis();
+        recordPrompt(STORE, STORE_AP, now);
+        recordPrompt(CAFE, CAFE_AP, now);
+        recordPrompt(HOME, HALL, now);
+        KeepADBNetworkBlocklist.blockBssid(context, CAFE_AP);
+        KeepADBTrustedNetwork.addBssid(context, HALL, HOME);
+
+        String all = everythingShown(open());
+
+        assertFalse("Nothing left to ask: " + all,
+                all.contains(context.getString(R.string.networks_section_recent)));
+        // Control: the current one is still asked, in its own card.
+        assertNotNull(findDecision(open()));
+    }
+
+    @Test
+    public void decideOpensTheDecisionForThatAccessPointAndRemoveDropsTheRecordOnly() {
+        KeepADBPreferences.setAppPrivacyEnabled(context, false);
+        connectNothing();
+        recordPrompt(STORE, STORE_AP, System.currentTimeMillis());
+        NetworkListActivity activity = open();
+        View root = activity.getWindow().getDecorView();
+
+        Button decide = findButton(root, context.getString(R.string.networks_recent_decide));
+        assertNotNull(texts(root), decide);
+        assertEquals(context.getString(R.string.networks_recent_decide_a11y,
+                        STORE + ", " + STORE_AP.toUpperCase(Locale.ROOT)),
+                decide.getContentDescription().toString());
+        decide.performClick();
+        Intent intent = shadowOf(activity).getNextStartedActivity();
+        assertNotNull(intent);
+        assertEquals(NetworkDecisionActivity.class.getName(), intent.getComponent().getClassName());
+        assertEquals(STORE_AP, intent.getStringExtra(KeepADBNetworkTrustPrompt.EXTRA_BSSID));
+        assertEquals("Opening the question decides nothing",
+                KeepADBNetworkDecision.Status.PENDING,
+                KeepADBNetworkDecision.resolve(context, STORE_AP).status);
+
+        findButton(root, context.getString(R.string.networks_recent_remove)).performClick();
+        ShadowLooper.idleMainLooper();
+        assertTrue(KeepADBBlockedNetworkHistory.getEntries(context).isEmpty());
+        assertFalse(KeepADBNetworkBlocklist.isBssidBlocked(context, STORE_AP));
+        assertFalse(everythingShown(activity).contains(STORE));
+    }
+
+    /** #799/#949: a focus request for a recently asked access point marks its row. */
+    @Test
+    public void aFocusRequestForARecentlyAskedAccessPointHighlightsItsRow() {
+        KeepADBPreferences.setAppPrivacyEnabled(context, false);
+        connectNothing();
+        recordPrompt(STORE, STORE_AP, System.currentTimeMillis());
+        recordPrompt(CAFE, CAFE_AP, System.currentTimeMillis());
+
+        NetworkListActivity activity = Robolectric.buildActivity(NetworkListActivity.class,
+                NetworkListActivity.intent(context, STORE_AP)).setup().get();
+        ShadowLooper.idleMainLooper();
+
+        View selected = null;
+        for (View view : allViews(activity.getWindow().getDecorView())) {
+            if (view.isSelected() && view instanceof LinearLayout) selected = view;
+        }
+        assertNotNull("The row of the requested access point is marked", selected);
+        String row = texts(selected);
+        assertTrue(row, row.contains(STORE));
+        assertFalse(row, row.contains(CAFE));
+    }
+
+    @Test
+    public void privacyModeHidesRecentlyAskedNetworksAndOffShowsThem() {
+        connectNothing();
+        recordPrompt(STORE, STORE_AP, System.currentTimeMillis());
+
+        KeepADBPreferences.setAppPrivacyEnabled(context, false);
+        assertTrue("Control", everythingShown(open()).contains(STORE));
+
+        KeepADBPreferences.setAppPrivacyEnabled(context, true);
+        String hidden = everythingShown(open()).toLowerCase(Locale.ROOT);
+        assertFalse(hidden, hidden.contains(STORE.toLowerCase(Locale.ROOT)));
+        assertFalse(hidden, hidden.contains(STORE_AP));
+        assertFalse(hidden, hidden.contains(
+                context.getString(R.string.networks_section_recent).toLowerCase(Locale.ROOT)));
+    }
+
     // --- Helpers -----------------------------------------------------------------------------
 
     private NetworkListActivity open() {

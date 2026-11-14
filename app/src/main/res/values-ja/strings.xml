@@ -681,4 +681,16 @@
     <string name="overview_last_delivery_none">まだ配信なし</string>
     <string name="overview_last_delivery_short">最終 %1$s</string>
     <string name="overview_last_delivery_short_none">まだなし</string>
+    <!-- #949: recently asked networks and the ways to block or decide -->
+    <string name="networks_section_recent">最近の確認</string>
+    <string name="networks_section_settings">設定</string>
+    <string name="networks_recent_hint">KeepADB がこれらの Wi-Fi ネットワークについて確認しましたが、応答がありませんでした（通知をスワイプして閉じた場合など）。</string>
+    <string name="networks_recent_asked">最終検出: %1$s</string>
+    <string name="networks_recent_decide">判断する…</string>
+    <string name="networks_recent_decide_a11y">%1$s について判断する</string>
+    <string name="networks_recent_remove">削除</string>
+    <string name="networks_recent_remove_a11y">%1$s をこのリストから削除</string>
+    <string name="network_action_decide">ブロックまたは判断…</string>
+    <string name="status_on_network_untrusted">Keep-Alive はここでは再度オンにしません: このWi-Fiネットワークは信頼されていません</string>
+    <string name="status_on_network_blocked">Keep-Alive はここでは再度オンにしません: このWi-Fiネットワークはブロックされています</string>
 </resources>

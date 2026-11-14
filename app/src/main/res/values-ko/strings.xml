@@ -681,4 +681,16 @@
     <string name="overview_last_delivery_none">아직 전송 없음</string>
     <string name="overview_last_delivery_short">마지막 %1$s</string>
     <string name="overview_last_delivery_short_none">아직 없음</string>
+    <!-- #949: recently asked networks and the ways to block or decide -->
+    <string name="networks_section_recent">최근 확인 요청</string>
+    <string name="networks_section_settings">설정</string>
+    <string name="networks_recent_hint">KeepADB가 이 Wi-Fi 네트워크에 대해 물었지만 응답을 받지 못했습니다. 예를 들어 알림을 밀어서 닫은 경우입니다.</string>
+    <string name="networks_recent_asked">마지막 감지: %1$s</string>
+    <string name="networks_recent_decide">결정…</string>
+    <string name="networks_recent_decide_a11y">%1$s 결정</string>
+    <string name="networks_recent_remove">삭제</string>
+    <string name="networks_recent_remove_a11y">이 목록에서 %1$s 삭제</string>
+    <string name="network_action_decide">차단 또는 결정…</string>
+    <string name="status_on_network_untrusted">Keep-Alive가 여기서 다시 켜지 않습니다: 이 Wi-Fi 네트워크는 신뢰할 수 없습니다</string>
+    <string name="status_on_network_blocked">Keep-Alive가 여기서 다시 켜지 않습니다: 이 Wi-Fi 네트워크는 차단되었습니다</string>
 </resources>

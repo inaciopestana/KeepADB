@@ -693,4 +693,16 @@ You can end it at any time from the home screen or the notification.</string>
     <!-- #928: the history line of the compact overview, where the full line above did not fit at large font scales in long languages; TalkBack reads the full line. -->
     <string name="overview_last_delivery_short">Last %1$s</string>
     <string name="overview_last_delivery_short_none">None yet</string>
+    <!-- #949: recently asked networks and the ways to block or decide -->
+    <string name="networks_section_recent">Recently asked</string>
+    <string name="networks_section_settings">Settings</string>
+    <string name="networks_recent_hint">KeepADB asked about these Wi-Fi networks and got no answer, for example because the notification was swiped away.</string>
+    <string name="networks_recent_asked">Last seen %1$s</string>
+    <string name="networks_recent_decide">Decide…</string>
+    <string name="networks_recent_decide_a11y">Decide on %1$s</string>
+    <string name="networks_recent_remove">Remove</string>
+    <string name="networks_recent_remove_a11y">Remove %1$s from this list</string>
+    <string name="network_action_decide">Block or decide…</string>
+    <string name="status_on_network_untrusted">Keep-Alive won\'t switch it back on here: this Wi-Fi network isn\'t trusted</string>
+    <string name="status_on_network_blocked">Keep-Alive won\'t switch it back on here: this Wi-Fi network is blocked</string>
 </resources>

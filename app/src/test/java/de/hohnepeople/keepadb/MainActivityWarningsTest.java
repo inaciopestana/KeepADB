@@ -438,6 +438,9 @@ public class MainActivityWarningsTest {
         KeepADBTrustedNetwork.setMode(context, KeepADBTrustedNetwork.MODE_ALLOWLIST);
         KeepADB.recordExplicitIntent(context, true);
         connectTo(BSSID);
+        // The prompt for this access point was raised (and swiped away): the app has its record.
+        KeepADBBlockedNetworkHistory.record(context, KeepADBNetworkIdentity.current(context),
+                System.currentTimeMillis());
         MainActivity activity = open();
         TextView status = activity.findViewById(R.id.status);
 
@@ -451,6 +454,84 @@ public class MainActivityWarningsTest {
         assertEquals(BSSID, intent.getStringExtra(KeepADBNetworkTrustPrompt.EXTRA_BSSID));
         assertFalse("The decision dialog gets no list focus extra",
                 intent.hasExtra(NetworkListActivity.EXTRA_FOCUS_BSSID));
+    }
+
+    /**
+     * #949: Wireless Debugging already on when the device joins a Wi-Fi that is not trusted. The
+     * status line says that Keep-Alive will not switch it back on here and opens the decision.
+     */
+    @Test
+    public void anOnStatusOnAnUntrustedWifiSaysSoAndOpensTheDecision() {
+        KeepADB.setGatewayForTesting(new KeepADBFakeSettingsGateway(true));
+        KeepADBPreferences.setKeepAliveEnabled(context, true);
+        KeepADBTrustedNetwork.setMode(context, KeepADBTrustedNetwork.MODE_ALLOWLIST);
+        connectTo(BSSID);
+        KeepADBBlockedNetworkHistory.record(context, KeepADBNetworkIdentity.current(context),
+                System.currentTimeMillis());
+        MainActivity activity = open();
+        TextView status = activity.findViewById(R.id.status);
+
+        String text = status.getText().toString();
+        assertTrue(text, text.contains(context.getString(R.string.status_on_network_untrusted)
+                + "\n" + context.getString(R.string.status_tap_to_decide)));
+        assertTrue(status.isClickable());
+        status.performClick();
+        Intent intent = shadowOf(activity).getNextStartedActivity();
+        assertNotNull(intent);
+        assertEquals(NetworkDecisionActivity.class.getName(), intent.getComponent().getClassName());
+        assertEquals(BSSID, intent.getStringExtra(KeepADBNetworkTrustPrompt.EXTRA_BSSID));
+    }
+
+    @Test
+    public void anOnStatusOnABlockedWifiSaysBlockedAndOpensTheList() {
+        KeepADB.setGatewayForTesting(new KeepADBFakeSettingsGateway(true));
+        KeepADBPreferences.setKeepAliveEnabled(context, true);
+        KeepADBTrustedNetwork.setMode(context, KeepADBTrustedNetwork.MODE_ALLOWLIST);
+        KeepADBNetworkBlocklist.blockBssid(context, BSSID);
+        connectTo(BSSID);
+        MainActivity activity = open();
+        TextView status = activity.findViewById(R.id.status);
+
+        String text = status.getText().toString();
+        assertTrue(text, text.contains(context.getString(R.string.status_on_network_blocked)
+                + "\n" + context.getString(R.string.status_tap_to_open_list)));
+        status.performClick();
+        assertEquals(NetworkListActivity.class.getName(),
+                shadowOf(activity).getNextStartedActivity().getComponent().getClassName());
+    }
+
+    /** Control: without Keep-Alive nothing would switch it back on anyway; no hint, no tap. */
+    @Test
+    public void anOnStatusWithoutKeepAliveGetsNoNetworkHint() {
+        KeepADB.setGatewayForTesting(new KeepADBFakeSettingsGateway(true));
+        KeepADBTrustedNetwork.setMode(context, KeepADBTrustedNetwork.MODE_ALLOWLIST);
+        connectTo(BSSID);
+        MainActivity activity = open();
+        TextView status = activity.findViewById(R.id.status);
+
+        assertFalse(status.getText().toString().contains(
+                context.getString(R.string.status_on_network_untrusted)));
+        assertFalse(status.isClickable());
+    }
+
+    /**
+     * #949: an undecided access point the app has no record of (no prompt was raised for it) would
+     * only end in "expired" in the dialog; the line leads to the list, whose current card asks.
+     */
+    @Test
+    public void theUntrustedStatusLineWithoutARecordOpensTheNetworksListOnTheAccessPoint() {
+        KeepADBPreferences.setKeepAliveEnabled(context, true);
+        KeepADBTrustedNetwork.setMode(context, KeepADBTrustedNetwork.MODE_ALLOWLIST);
+        KeepADB.recordExplicitIntent(context, true);
+        connectTo(BSSID);
+        MainActivity activity = open();
+        TextView status = activity.findViewById(R.id.status);
+
+        status.performClick();
+        Intent intent = shadowOf(activity).getNextStartedActivity();
+        assertNotNull(intent);
+        assertEquals(NetworkListActivity.class.getName(), intent.getComponent().getClassName());
+        assertEquals(BSSID, intent.getStringExtra(NetworkListActivity.EXTRA_FOCUS_BSSID));
     }
 
     /**

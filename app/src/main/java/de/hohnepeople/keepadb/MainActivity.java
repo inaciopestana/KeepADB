@@ -482,9 +482,9 @@ public class MainActivity extends Activity {
                 status.setText(getString(R.string.status_off_keep_alive_waiting));
             }
         } else if (appState == KeepADB.State.ENABLED_DISCONNECTED) {
-            status.setText(getString(R.string.status_enabled_disconnected));
+            status.setText(withUntrustedNetworkHint(getString(R.string.status_enabled_disconnected)));
         } else {
-            status.setText(getString(R.string.status_on));
+            status.setText(withUntrustedNetworkHint(getString(R.string.status_on)));
         }
         keepAliveToggle.setEnabled(configured);
         keepAliveToggle.setChecked(KeepADBPreferences.isKeepAliveEnabled(this));
@@ -547,6 +547,27 @@ public class MainActivity extends Activity {
 
 
     /**
+     * #949: while Wireless Debugging is on, Keep-Alive is enabled and the device sits on a Wi-Fi
+     * that is not trusted (or blocked), the status line says so and becomes the same tap target as
+     * the paused state: the decision for an undecided network, the list for a decided one. Without
+     * it, joining a public Wi-Fi with debugging already on left Home without any way in.
+     */
+    private String withUntrustedNetworkHint(String base) {
+        if (!KeepADBPreferences.isKeepAliveEnabled(this)
+                || KeepADBTrustedNetwork.getBlockReason(this)
+                        != KeepADBTrustedNetwork.BlockReason.UNTRUSTED_NETWORK) {
+            return base;
+        }
+        boolean blocked = KeepADBTrustedNetwork.evaluate(this,
+                KeepADBNetworkIdentity.current(this)).isBlocked();
+        makeStatusDecisionEntry();
+        return base + "\n" + getString(blocked ? R.string.status_on_network_blocked
+                : R.string.status_on_network_untrusted)
+                + "\n" + getString(blocked ? R.string.status_tap_to_open_list
+                        : R.string.status_tap_to_decide);
+    }
+
+    /**
      * #764 (UX concept 5.3): the status line "this Wi-Fi isn't trusted" is the shortest way from
      * "why does it not switch on?" to the answer, so it opens the trust decision for the access
      * point the device is on. It only carries the BSSID as a selector, like the notification does;
@@ -571,8 +592,12 @@ public class MainActivity extends Activity {
         boolean decided = decision.isBlocked()
                 || decision == KeepADBTrustedNetwork.Decision.TRUSTED_ACCESS_POINT
                 || decision == KeepADBTrustedNetwork.Decision.TRUSTED_NAME;
-        return decided ? NetworkListActivity.intent(this, identity.bssid)
-                : KeepADBNetworkTrustPrompt.decisionIntent(this, identity.bssid);
+        // #949: an undecided network the app has no record of (no prompt was raised for it yet)
+        // would only end in "expired"; the list's current card asks the same question.
+        boolean askable = !decided && KeepADBNetworkDecision.resolve(this, identity.bssid).status
+                == KeepADBNetworkDecision.Status.PENDING;
+        return askable ? KeepADBNetworkTrustPrompt.decisionIntent(this, identity.bssid)
+                : NetworkListActivity.intent(this, identity.bssid);
     }
 
     private void clearStatusDecisionEntry() {

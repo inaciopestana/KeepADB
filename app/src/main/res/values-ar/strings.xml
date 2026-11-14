@@ -686,4 +686,16 @@
     <string name="overview_last_delivery_none">لا تسليم بعد</string>
     <string name="overview_last_delivery_short">آخر %1$s</string>
     <string name="overview_last_delivery_short_none">لا شيء بعد</string>
+    <!-- #949: recently asked networks and the ways to block or decide -->
+    <string name="networks_section_recent">سُئل عنها مؤخرًا</string>
+    <string name="networks_section_settings">الإعدادات</string>
+    <string name="networks_recent_hint">سأل KeepADB عن شبكات Wi-Fi هذه ولم يتلقَّ إجابة، مثلًا لأن الإشعار أُزيل بالسحب.</string>
+    <string name="networks_recent_asked">آخر ظهور %1$s</string>
+    <string name="networks_recent_decide">قرِّر…</string>
+    <string name="networks_recent_decide_a11y">قرِّر بشأن %1$s</string>
+    <string name="networks_recent_remove">إزالة</string>
+    <string name="networks_recent_remove_a11y">إزالة %1$s من هذه القائمة</string>
+    <string name="network_action_decide">حظر أو قرار…</string>
+    <string name="status_on_network_untrusted">لن يعيد Keep-Alive تشغيله هنا: هذه الشبكة غير موثوقة</string>
+    <string name="status_on_network_blocked">لن يعيد Keep-Alive تشغيله هنا: هذه الشبكة محظورة</string>
 </resources>

@@ -111,21 +111,25 @@ final class NetworkListRenderer {
         root.setVisibility(View.VISIBLE);
         frequencies = KeepADBAccessPointBand.read(activity);
 
-        addGlossary();
-        addProtection();
-        addForceNote();
+        // #949: the networks come first, the settings and the glossary after them, so the place
+        // to act on the current or a recently asked network is at the top of the page.
         if (KeepADBNetworkDisplay.hidden(shown())) {
             highlightBssid = null;
             addHiddenPlaceholder();
-            return;
+        } else {
+            KeepADBNetworkIdentity identity = KeepADBNetworkIdentity.current(activity);
+            boolean wifiConnected = identity.isKnown() || KeepADBService.isWifiConnected(activity);
+            KeepADBNetworkList.Snapshot snapshot =
+                    KeepADBNetworkList.build(activity, identity, wifiConnected);
+            addCurrent(snapshot.current, identity);
+            addRecent(identity.isKnown() ? identity.bssid : null);
+            addSaved(snapshot);
+            markHighlight(snapshot);
         }
-        KeepADBNetworkIdentity identity = KeepADBNetworkIdentity.current(activity);
-        boolean wifiConnected = identity.isKnown() || KeepADBService.isWifiConnected(activity);
-        KeepADBNetworkList.Snapshot snapshot =
-                KeepADBNetworkList.build(activity, identity, wifiConnected);
-        addCurrent(snapshot.current, identity);
-        addSaved(snapshot);
-        markHighlight(snapshot);
+        root.addView(sectionHeading(R.string.networks_section_settings, 24));
+        addProtection();
+        addForceNote();
+        addGlossary();
     }
 
     private boolean isHighlight(String bssid) {
@@ -434,6 +438,92 @@ final class NetworkListRenderer {
                             ? reasonText(current.reason, current.ssid, row != null && row.entry != null)
                             : null));
         }
+    }
+
+    // --- Recently asked (#949) ---------------------------------------------------------------
+
+    /**
+     * #949: the access points KeepADB asked about and nobody answered, for instance after the
+     * prompt was swiped away on a public Wi-Fi. Each one opens the same decision as the
+     * notification (#766) or can be removed from the record. Drawn only while the list itself is
+     * shown, so the privacy mode (#904) hides it with everything else; nothing of it reaches the
+     * diagnostics but the bare action.
+     */
+    private void addRecent(String currentBssid) {
+        List<KeepADBBlockedNetworkHistory.Entry> entries =
+                KeepADBNetworkDecision.recentUndecided(activity, currentBssid);
+        if (entries.isEmpty()) return;
+        root.addView(sectionHeading(R.string.networks_section_recent, 24));
+        TextView hint = text(activity.getString(R.string.networks_recent_hint), 12,
+                R.color.night_muted);
+        hint.setPadding(0, dp(4), 0, 0);
+        root.addView(hint);
+        for (KeepADBBlockedNetworkHistory.Entry entry : entries) {
+            View row = recentRow(entry);
+            // #799: "Block or decide…" in Settings focuses the access point it showed; after a roam
+            // that is no longer the current card but may be one of these rows.
+            if (highlightView == null && isHighlight(entry.bssid)) {
+                highlightView = row;
+                row.setSelected(true);
+            }
+            root.addView(row);
+        }
+    }
+
+    private View recentRow(KeepADBBlockedNetworkHistory.Entry entry) {
+        LinearLayout card = panel(R.drawable.bg_panel);
+        card.setPadding(dp(12), dp(12), dp(12), dp(12));
+        setTopMargin(card, 8);
+
+        boolean named = entry.ssid != null && !entry.ssid.isEmpty();
+        int band = KeepADBAccessPointBand.bandOf(frequencies, entry.bssid);
+        String bssidLine = KeepADBNetworkDisplay.bssidWithBand(shown(), entry.bssid, band);
+        String title = named ? KeepADBNetworkDisplay.ssid(shown(), entry.ssid, null) : bssidLine;
+        card.addView(titleLine(title, !named, statusBadge(KeepADBNetworkList.Status.UNKNOWN), 15));
+        if (named) card.addView(monoLine(bssidLine));
+        // An absolute date and time: a relative span ("Vor 9 Stunden") starts upper case in some
+        // languages and reads wrong in the middle of a sentence (seen on the s20).
+        String asked = activity.getString(R.string.networks_recent_asked,
+                android.text.format.DateUtils.formatDateTime(activity, entry.lastSeenAt,
+                        android.text.format.DateUtils.FORMAT_SHOW_DATE
+                                | android.text.format.DateUtils.FORMAT_SHOW_TIME
+                                | android.text.format.DateUtils.FORMAT_ABBREV_MONTH));
+        card.addView(text(asked, 12, R.color.night_muted));
+
+        Button decide = stackedButton(activity.getString(R.string.networks_recent_decide), true,
+                v -> activity.startActivity(
+                        KeepADBNetworkTrustPrompt.decisionIntent(activity, entry.bssid)));
+        // Several access points can share a name: the spoken target carries the address too.
+        String target = named ? title + ", " + bssidLine : bssidLine;
+        decide.setContentDescription(activity.getString(R.string.networks_recent_decide_a11y, target));
+        Button remove = plainButton(activity.getString(R.string.networks_recent_remove), v -> {
+            KeepADBBlockedNetworkHistory.remove(activity, entry.bssid);
+            KeepADBDiagnostics.event(activity, "user_action", "network_list", "removed",
+                    "recent_prompt");
+            onChanged.run();
+        });
+        remove.setContentDescription(activity.getString(R.string.networks_recent_remove_a11y, target));
+        // Side by side, so a few entries do not fill the screen; stacked where it gets narrow.
+        Configuration config = activity.getResources().getConfiguration();
+        boolean stacked = config.fontScale >= 1.3f || config.screenWidthDp < 360;
+        LinearLayout actions = new LinearLayout(activity);
+        actions.setOrientation(stacked ? LinearLayout.VERTICAL : LinearLayout.HORIZONTAL);
+        actions.setGravity(Gravity.CENTER_VERTICAL);
+        if (!stacked) {
+            LinearLayout.LayoutParams half = new LinearLayout.LayoutParams(
+                    0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
+            half.topMargin = dp(8);
+            decide.setLayoutParams(half);
+            LinearLayout.LayoutParams other = new LinearLayout.LayoutParams(
+                    0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
+            other.topMargin = dp(8);
+            other.setMarginStart(dp(8));
+            remove.setLayoutParams(other);
+        }
+        actions.addView(decide);
+        actions.addView(remove);
+        card.addView(actions);
+        return card;
     }
 
     // --- Saved networks ----------------------------------------------------------------------

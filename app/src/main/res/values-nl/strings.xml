@@ -682,4 +682,16 @@ Je kunt het op elk moment beëindigen via het startscherm of de melding.</string
     <string name="overview_last_delivery_none">Nog geen levering</string>
     <string name="overview_last_delivery_short">Laatst %1$s</string>
     <string name="overview_last_delivery_short_none">Nog geen</string>
+    <!-- #949: recently asked networks and the ways to block or decide -->
+    <string name="networks_section_recent">Recent gevraagd</string>
+    <string name="networks_section_settings">Instellingen</string>
+    <string name="networks_recent_hint">KeepADB heeft naar deze wifi-netwerken gevraagd en geen antwoord gekregen, bijvoorbeeld omdat de melding is weggeveegd.</string>
+    <string name="networks_recent_asked">Laatst gezien %1$s</string>
+    <string name="networks_recent_decide">Beslissen…</string>
+    <string name="networks_recent_decide_a11y">Beslissen over %1$s</string>
+    <string name="networks_recent_remove">Verwijderen</string>
+    <string name="networks_recent_remove_a11y">%1$s uit deze lijst verwijderen</string>
+    <string name="network_action_decide">Blokkeren of beslissen…</string>
+    <string name="status_on_network_untrusted">Keep-Alive zet het hier niet weer aan: dit wifi-netwerk is niet vertrouwd</string>
+    <string name="status_on_network_blocked">Keep-Alive zet het hier niet weer aan: dit wifi-netwerk is geblokkeerd</string>
 </resources>

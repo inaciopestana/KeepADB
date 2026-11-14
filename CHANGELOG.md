@@ -23,6 +23,32 @@ record development snapshots; their dates describe implementation history, not p
 A version is released only when a corresponding tag or public release exists. `1.4.1` and `1.4.2`
 are retrospective issue-version records and were never published as separate releases.
 
+## [1.12.8] - Unreleased
+
+### Added
+- **"Recently asked" in the Networks list (#949):** access points KeepADB prompted about and nobody
+  answered (for example after the prompt was swiped away on a public Wi-Fi) are listed between the
+  current network and the saved ones, newest first, with the time of the prompt. "Decide…" opens the
+  same decision dialog as the notification (#766: trust, block the access point, block the Wi-Fi
+  name); "Remove from this list" drops only the record. The source is the existing
+  `KeepADBBlockedNetworkHistory` (max. 10 entries); trusted, blocked and current access points are
+  left out. Hidden with the rest of the list in privacy mode (#904); diagnostics log only the action.
+- **"Networks" in the home menu (#949):** opens the Networks list directly, below "Network".
+- **"Block or decide…" in Settings → Network (#949):** next to "Trust this access point", an
+  undecided access point gets a second button that opens the Networks list on that access point,
+  where the embedded decision offers blocking too.
+
+### Changed
+- **Home status line on an untrusted Wi-Fi while Wireless Debugging is on (#949):** with Keep-Alive
+  enabled, the line adds that Keep-Alive will not switch it back on here (not trusted, or blocked)
+  and becomes the same tap target as the paused state.
+- **Status-line tap without a prompt record (#949):** an undecided access point the app has no
+  prompt record for now opens the Networks list on it instead of a dialog that could only say
+  "expired".
+- **Networks list order (#949):** current network, recently asked, saved networks, then a
+  "Settings" heading with the convenience switch, Force mode note and glossary (before: glossary and
+  settings on top).
+
 ## [1.12.7] - Unreleased
 
 ### Changed

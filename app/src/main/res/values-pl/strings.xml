@@ -684,4 +684,16 @@ Możesz zakończyć tryb w dowolnej chwili z ekranu głównego lub z powiadomien
     <string name="overview_last_delivery_none">Jeszcze nic nie dostarczono</string>
     <string name="overview_last_delivery_short">Ostatnio %1$s</string>
     <string name="overview_last_delivery_short_none">Jeszcze nic</string>
+    <!-- #949: recently asked networks and the ways to block or decide -->
+    <string name="networks_section_recent">Ostatnio pytano</string>
+    <string name="networks_section_settings">Ustawienia</string>
+    <string name="networks_recent_hint">KeepADB pytał o te sieci Wi-Fi i nie dostał odpowiedzi, na przykład dlatego, że powiadomienie zostało odrzucone.</string>
+    <string name="networks_recent_asked">Pytano %1$s</string>
+    <string name="networks_recent_decide">Zdecyduj…</string>
+    <string name="networks_recent_decide_a11y">Zdecyduj o %1$s</string>
+    <string name="networks_recent_remove">Usuń z tej listy</string>
+    <string name="networks_recent_remove_a11y">Usuń %1$s z tej listy</string>
+    <string name="network_action_decide">Zablokuj lub zdecyduj…</string>
+    <string name="status_on_network_untrusted">Keep-Alive nie włączy go tu ponownie: ta sieć Wi-Fi nie jest zaufana</string>
+    <string name="status_on_network_blocked">Keep-Alive nie włączy go tu ponownie: ta sieć Wi-Fi jest zablokowana</string>
 </resources>

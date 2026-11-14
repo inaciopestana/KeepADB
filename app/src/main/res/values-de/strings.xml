@@ -682,4 +682,16 @@ Beenden kannst du jederzeit über die Startseite oder die Benachrichtigung.</str
     <string name="overview_last_delivery_none">Noch keine Zustellung</string>
     <string name="overview_last_delivery_short">Zuletzt %1$s</string>
     <string name="overview_last_delivery_short_none">Noch keine</string>
+    <!-- #949: recently asked networks and the ways to block or decide -->
+    <string name="networks_section_recent">Zuletzt nachgefragt</string>
+    <string name="networks_section_settings">Einstellungen</string>
+    <string name="networks_recent_hint">Zu diesen WLANs hat KeepADB nachgefragt und keine Antwort bekommen, zum Beispiel weil die Benachrichtigung weggewischt wurde.</string>
+    <string name="networks_recent_asked">Gefragt %1$s</string>
+    <string name="networks_recent_decide">Entscheiden…</string>
+    <string name="networks_recent_decide_a11y">Über %1$s entscheiden</string>
+    <string name="networks_recent_remove">Aus dieser Liste entfernen</string>
+    <string name="networks_recent_remove_a11y">%1$s aus dieser Liste entfernen</string>
+    <string name="network_action_decide">Blockieren oder entscheiden…</string>
+    <string name="status_on_network_untrusted">Keep-Alive schaltet es hier nicht wieder ein: Dieses WLAN ist nicht vertraut</string>
+    <string name="status_on_network_blocked">Keep-Alive schaltet es hier nicht wieder ein: Dieses WLAN ist blockiert</string>
 </resources>

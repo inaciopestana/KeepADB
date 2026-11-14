@@ -681,4 +681,16 @@ Anda dapat mengakhirinya kapan saja dari layar utama atau notifikasi.</string>
     <string name="overview_last_delivery_none">Belum ada pengiriman</string>
     <string name="overview_last_delivery_short">Terakhir %1$s</string>
     <string name="overview_last_delivery_short_none">Belum ada</string>
+    <!-- #949: recently asked networks and the ways to block or decide -->
+    <string name="networks_section_recent">Baru ditanyakan</string>
+    <string name="networks_section_settings">Setelan</string>
+    <string name="networks_recent_hint">KeepADB menanyakan jaringan Wi-Fi ini dan tidak mendapat jawaban, misalnya karena notifikasi digeser.</string>
+    <string name="networks_recent_asked">Ditanyakan %1$s</string>
+    <string name="networks_recent_decide">Putuskan…</string>
+    <string name="networks_recent_decide_a11y">Putuskan untuk %1$s</string>
+    <string name="networks_recent_remove">Hapus dari daftar ini</string>
+    <string name="networks_recent_remove_a11y">Hapus %1$s dari daftar ini</string>
+    <string name="network_action_decide">Blokir atau putuskan…</string>
+    <string name="status_on_network_untrusted">Keep-Alive tidak akan mengaktifkannya lagi di sini: jaringan Wi-Fi ini tidak dipercaya</string>
+    <string name="status_on_network_blocked">Keep-Alive tidak akan mengaktifkannya lagi di sini: jaringan Wi-Fi ini diblokir</string>
 </resources>

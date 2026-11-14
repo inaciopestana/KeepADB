@@ -683,4 +683,16 @@ Vous pouvez l\'arrêter à tout moment depuis l\'écran d\'accueil ou la notific
     <string name="overview_last_delivery_none">Aucune livraison</string>
     <string name="overview_last_delivery_short">Dern. %1$s</string>
     <string name="overview_last_delivery_short_none">Aucune</string>
+    <!-- #949: recently asked networks and the ways to block or decide -->
+    <string name="networks_section_recent">Demandés récemment</string>
+    <string name="networks_section_settings">Paramètres</string>
+    <string name="networks_recent_hint">KeepADB a posé la question pour ces réseaux Wi-Fi sans obtenir de réponse, par exemple parce que la notification a été balayée.</string>
+    <string name="networks_recent_asked">Demandé %1$s</string>
+    <string name="networks_recent_decide">Décider…</string>
+    <string name="networks_recent_decide_a11y">Décider pour %1$s</string>
+    <string name="networks_recent_remove">Retirer de cette liste</string>
+    <string name="networks_recent_remove_a11y">Retirer %1$s de cette liste</string>
+    <string name="network_action_decide">Bloquer ou décider…</string>
+    <string name="status_on_network_untrusted">Keep-Alive ne le réactivera pas ici : ce réseau Wi-Fi n\'est pas approuvé</string>
+    <string name="status_on_network_blocked">Keep-Alive ne le réactivera pas ici : ce réseau Wi-Fi est bloqué</string>
 </resources>

@@ -681,4 +681,16 @@
     <string name="overview_last_delivery_none">尚無傳送</string>
     <string name="overview_last_delivery_short">上次 %1$s</string>
     <string name="overview_last_delivery_short_none">尚無</string>
+    <!-- #949: recently asked networks and the ways to block or decide -->
+    <string name="networks_section_recent">最近詢問</string>
+    <string name="networks_section_settings">設定</string>
+    <string name="networks_recent_hint">KeepADB 詢問過這些 Wi-Fi 網路，但沒有得到回覆，例如因為通知被滑掉了。</string>
+    <string name="networks_recent_asked">詢問時間：%1$s</string>
+    <string name="networks_recent_decide">做出決定…</string>
+    <string name="networks_recent_decide_a11y">為 %1$s 做出決定</string>
+    <string name="networks_recent_remove">從這份清單移除</string>
+    <string name="networks_recent_remove_a11y">從這份清單移除 %1$s</string>
+    <string name="network_action_decide">封鎖或做出決定…</string>
+    <string name="status_on_network_untrusted">Keep-Alive 不會在此重新開啟：此 Wi-Fi 網路未信任</string>
+    <string name="status_on_network_blocked">Keep-Alive 不會在此重新開啟：此 Wi-Fi 網路已被封鎖</string>
 </resources>

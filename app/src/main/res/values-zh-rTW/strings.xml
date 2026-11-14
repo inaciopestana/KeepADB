@@ -688,7 +688,7 @@
     <string name="networks_recent_asked">上次偵測到：%1$s</string>
     <string name="networks_recent_decide">做出決定…</string>
     <string name="networks_recent_decide_a11y">為 %1$s 做出決定</string>
-    <string name="networks_recent_remove">從這份清單移除</string>
+    <string name="networks_recent_remove">移除</string>
     <string name="networks_recent_remove_a11y">從這份清單移除 %1$s</string>
     <string name="network_action_decide">封鎖或做出決定…</string>
     <string name="status_on_network_untrusted">Keep-Alive 不會在此重新開啟：此 Wi-Fi 網路未信任</string>

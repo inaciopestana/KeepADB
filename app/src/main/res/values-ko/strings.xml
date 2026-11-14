@@ -688,7 +688,7 @@
     <string name="networks_recent_asked">마지막 감지: %1$s</string>
     <string name="networks_recent_decide">결정…</string>
     <string name="networks_recent_decide_a11y">%1$s 결정</string>
-    <string name="networks_recent_remove">이 목록에서 삭제</string>
+    <string name="networks_recent_remove">삭제</string>
     <string name="networks_recent_remove_a11y">이 목록에서 %1$s 삭제</string>
     <string name="network_action_decide">차단 또는 결정…</string>
     <string name="status_on_network_untrusted">Keep-Alive가 여기서 다시 켜지 않습니다: 이 Wi-Fi 네트워크는 신뢰할 수 없습니다</string>

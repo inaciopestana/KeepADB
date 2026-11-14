@@ -688,7 +688,7 @@ Anda dapat mengakhirinya kapan saja dari layar utama atau notifikasi.</string>
     <string name="networks_recent_asked">Terakhir terlihat %1$s</string>
     <string name="networks_recent_decide">Putuskan…</string>
     <string name="networks_recent_decide_a11y">Putuskan untuk %1$s</string>
-    <string name="networks_recent_remove">Hapus dari daftar ini</string>
+    <string name="networks_recent_remove">Hapus</string>
     <string name="networks_recent_remove_a11y">Hapus %1$s dari daftar ini</string>
     <string name="network_action_decide">Blokir atau putuskan…</string>
     <string name="status_on_network_untrusted">Keep-Alive tidak akan mengaktifkannya lagi di sini: jaringan Wi-Fi ini tidak dipercaya</string>

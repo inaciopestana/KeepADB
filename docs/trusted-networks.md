@@ -249,7 +249,7 @@ example after the notice was swiped away while logging in to a shop's Wi-Fi — 
 (“recently prevented” history, at most 10 entries). Access points trusted or blocked in the meantime
 and the current network (asked in its own card) are left out. “Decide…” opens the decision dialog
 of the notice for that access point (Trust, “Block this access point only,” “Always block Wi-Fi
-name…”); “Remove from this list” deletes only the record and decides nothing. The section exists
+name…”); “Remove” deletes only the record and decides nothing. The section exists
 only while the list is shown, so the privacy mode hides it like everything else.
 
 **Other ways in (#949).** In Settings → Network, an undecided current access point offers “Block

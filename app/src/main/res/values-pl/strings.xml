@@ -691,7 +691,7 @@ Możesz zakończyć tryb w dowolnej chwili z ekranu głównego lub z powiadomien
     <string name="networks_recent_asked">Ostatnio widziano %1$s</string>
     <string name="networks_recent_decide">Zdecyduj…</string>
     <string name="networks_recent_decide_a11y">Zdecyduj o %1$s</string>
-    <string name="networks_recent_remove">Usuń z tej listy</string>
+    <string name="networks_recent_remove">Usuń</string>
     <string name="networks_recent_remove_a11y">Usuń %1$s z tej listy</string>
     <string name="network_action_decide">Zablokuj lub zdecyduj…</string>
     <string name="status_on_network_untrusted">Keep-Alive nie włączy go tu ponownie: ta sieć Wi-Fi nie jest zaufana</string>

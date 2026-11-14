@@ -689,7 +689,7 @@
     <string name="networks_recent_asked">आख़िरी बार दिखा: %1$s</string>
     <string name="networks_recent_decide">निर्णय लें…</string>
     <string name="networks_recent_decide_a11y">%1$s के लिए निर्णय लें</string>
-    <string name="networks_recent_remove">इस सूची से हटाएँ</string>
+    <string name="networks_recent_remove">हटाएँ</string>
     <string name="networks_recent_remove_a11y">%1$s को इस सूची से हटाएँ</string>
     <string name="network_action_decide">रोकें या निर्णय लें…</string>
     <string name="status_on_network_untrusted">Keep-Alive इसे यहाँ फिर से चालू नहीं करेगा: यह Wi-Fi नेटवर्क भरोसेमंद नहीं है</string>

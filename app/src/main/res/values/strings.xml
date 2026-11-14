@@ -700,7 +700,7 @@ You can end it at any time from the home screen or the notification.</string>
     <string name="networks_recent_asked">Last seen %1$s</string>
     <string name="networks_recent_decide">Decide…</string>
     <string name="networks_recent_decide_a11y">Decide on %1$s</string>
-    <string name="networks_recent_remove">Remove from this list</string>
+    <string name="networks_recent_remove">Remove</string>
     <string name="networks_recent_remove_a11y">Remove %1$s from this list</string>
     <string name="network_action_decide">Block or decide…</string>
     <string name="status_on_network_untrusted">Keep-Alive won\'t switch it back on here: this Wi-Fi network isn\'t trusted</string>

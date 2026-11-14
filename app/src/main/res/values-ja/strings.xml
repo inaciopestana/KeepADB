@@ -688,7 +688,7 @@
     <string name="networks_recent_asked">最終検出: %1$s</string>
     <string name="networks_recent_decide">判断する…</string>
     <string name="networks_recent_decide_a11y">%1$s について判断する</string>
-    <string name="networks_recent_remove">このリストから削除</string>
+    <string name="networks_recent_remove">削除</string>
     <string name="networks_recent_remove_a11y">%1$s をこのリストから削除</string>
     <string name="network_action_decide">ブロックまたは判断…</string>
     <string name="status_on_network_untrusted">Keep-Alive はここでは再度オンにしません: このWi-Fiネットワークは信頼されていません</string>

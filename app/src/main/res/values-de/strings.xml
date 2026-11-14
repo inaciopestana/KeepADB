@@ -689,7 +689,7 @@ Beenden kannst du jederzeit über die Startseite oder die Benachrichtigung.</str
     <string name="networks_recent_asked">Zuletzt gesehen %1$s</string>
     <string name="networks_recent_decide">Entscheiden…</string>
     <string name="networks_recent_decide_a11y">Über %1$s entscheiden</string>
-    <string name="networks_recent_remove">Aus dieser Liste entfernen</string>
+    <string name="networks_recent_remove">Entfernen</string>
     <string name="networks_recent_remove_a11y">%1$s aus dieser Liste entfernen</string>
     <string name="network_action_decide">Blockieren oder entscheiden…</string>
     <string name="status_on_network_untrusted">Keep-Alive schaltet es hier nicht wieder ein: Dieses WLAN ist nicht vertraut</string>

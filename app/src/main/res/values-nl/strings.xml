@@ -689,7 +689,7 @@ Je kunt het op elk moment beëindigen via het startscherm of de melding.</string
     <string name="networks_recent_asked">Laatst gezien %1$s</string>
     <string name="networks_recent_decide">Beslissen…</string>
     <string name="networks_recent_decide_a11y">Beslissen over %1$s</string>
-    <string name="networks_recent_remove">Uit deze lijst verwijderen</string>
+    <string name="networks_recent_remove">Verwijderen</string>
     <string name="networks_recent_remove_a11y">%1$s uit deze lijst verwijderen</string>
     <string name="network_action_decide">Blokkeren of beslissen…</string>
     <string name="status_on_network_untrusted">Keep-Alive zet het hier niet weer aan: dit wifi-netwerk is niet vertrouwd</string>

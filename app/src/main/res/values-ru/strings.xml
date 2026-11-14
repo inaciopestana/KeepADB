@@ -691,7 +691,7 @@
     <string name="networks_recent_asked">Последний раз: %1$s</string>
     <string name="networks_recent_decide">Решить…</string>
     <string name="networks_recent_decide_a11y">Решить для %1$s</string>
-    <string name="networks_recent_remove">Убрать из этого списка</string>
+    <string name="networks_recent_remove">Убрать</string>
     <string name="networks_recent_remove_a11y">Убрать %1$s из этого списка</string>
     <string name="network_action_decide">Заблокировать или решить…</string>
     <string name="status_on_network_untrusted">Keep-Alive не включит его здесь снова: эта сеть Wi-Fi не является доверенной</string>

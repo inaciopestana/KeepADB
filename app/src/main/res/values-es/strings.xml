@@ -690,7 +690,7 @@ Puedes terminarlo en cualquier momento desde la pantalla de inicio o la notifica
     <string name="networks_recent_asked">Visto por última vez %1$s</string>
     <string name="networks_recent_decide">Decidir…</string>
     <string name="networks_recent_decide_a11y">Decidir sobre %1$s</string>
-    <string name="networks_recent_remove">Quitar de esta lista</string>
+    <string name="networks_recent_remove">Quitar</string>
     <string name="networks_recent_remove_a11y">Quitar %1$s de esta lista</string>
     <string name="network_action_decide">Bloquear o decidir…</string>
     <string name="status_on_network_untrusted">Keep-Alive no lo volverá a activar aquí: esta red Wi-Fi no es de confianza</string>

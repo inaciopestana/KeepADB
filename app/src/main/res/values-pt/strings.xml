@@ -690,7 +690,7 @@ Pode terminá-lo a qualquer momento no ecrã inicial ou na notificação.</strin
     <string name="networks_recent_asked">Visto pela última vez %1$s</string>
     <string name="networks_recent_decide">Decidir…</string>
     <string name="networks_recent_decide_a11y">Decidir sobre %1$s</string>
-    <string name="networks_recent_remove">Remover desta lista</string>
+    <string name="networks_recent_remove">Remover</string>
     <string name="networks_recent_remove_a11y">Remover %1$s desta lista</string>
     <string name="network_action_decide">Bloquear ou decidir…</string>
     <string name="status_on_network_untrusted">O Keep-Alive não o reativará aqui: esta rede Wi-Fi não é fiável</string>

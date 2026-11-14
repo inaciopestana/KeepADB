@@ -30,7 +30,7 @@ are retrospective issue-version records and were never published as separate rel
   answered (for example after the prompt was swiped away on a public Wi-Fi) are listed between the
   current network and the saved ones, newest first, with the time the access point was last detected. "Decide…" opens the
   same decision dialog as the notification (#766: trust, block the access point, block the Wi-Fi
-  name); "Remove from this list" drops only the record. The source is the existing
+  name); "Remove" drops only the record. The source is the existing
   `KeepADBBlockedNetworkHistory` (max. 10 entries); trusted, blocked and current access points are
   left out. Hidden with the rest of the list in privacy mode (#904); diagnostics log only the action.
 - **"Networks" in the home menu (#949):** opens the Networks list directly, below "Network".

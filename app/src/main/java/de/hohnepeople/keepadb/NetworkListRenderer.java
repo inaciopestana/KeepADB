@@ -481,9 +481,13 @@ final class NetworkListRenderer {
         String title = named ? KeepADBNetworkDisplay.ssid(shown(), entry.ssid, null) : bssidLine;
         card.addView(titleLine(title, !named, statusBadge(KeepADBNetworkList.Status.UNKNOWN), 15));
         if (named) card.addView(monoLine(bssidLine));
+        // An absolute date and time: a relative span ("Vor 9 Stunden") starts upper case in some
+        // languages and reads wrong in the middle of a sentence (seen on the s20).
         String asked = activity.getString(R.string.networks_recent_asked,
-                android.text.format.DateUtils.getRelativeTimeSpanString(entry.lastSeenAt,
-                        System.currentTimeMillis(), android.text.format.DateUtils.MINUTE_IN_MILLIS));
+                android.text.format.DateUtils.formatDateTime(activity, entry.lastSeenAt,
+                        android.text.format.DateUtils.FORMAT_SHOW_DATE
+                                | android.text.format.DateUtils.FORMAT_SHOW_TIME
+                                | android.text.format.DateUtils.FORMAT_ABBREV_MONTH));
         card.addView(text(asked, 12, R.color.night_muted));
 
         Button decide = stackedButton(activity.getString(R.string.networks_recent_decide), true,
@@ -492,7 +496,6 @@ final class NetworkListRenderer {
         // Several access points can share a name: the spoken target carries the address too.
         String target = named ? title + ", " + bssidLine : bssidLine;
         decide.setContentDescription(activity.getString(R.string.networks_recent_decide_a11y, target));
-        card.addView(decide);
         Button remove = plainButton(activity.getString(R.string.networks_recent_remove), v -> {
             KeepADBBlockedNetworkHistory.remove(activity, entry.bssid);
             KeepADBDiagnostics.event(activity, "user_action", "network_list", "removed",
@@ -500,7 +503,26 @@ final class NetworkListRenderer {
             onChanged.run();
         });
         remove.setContentDescription(activity.getString(R.string.networks_recent_remove_a11y, target));
-        card.addView(remove);
+        // Side by side, so a few entries do not fill the screen; stacked where it gets narrow.
+        Configuration config = activity.getResources().getConfiguration();
+        boolean stacked = config.fontScale >= 1.3f || config.screenWidthDp < 360;
+        LinearLayout actions = new LinearLayout(activity);
+        actions.setOrientation(stacked ? LinearLayout.VERTICAL : LinearLayout.HORIZONTAL);
+        actions.setGravity(Gravity.CENTER_VERTICAL);
+        if (!stacked) {
+            LinearLayout.LayoutParams half = new LinearLayout.LayoutParams(
+                    0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
+            half.topMargin = dp(8);
+            decide.setLayoutParams(half);
+            LinearLayout.LayoutParams other = new LinearLayout.LayoutParams(
+                    0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
+            other.topMargin = dp(8);
+            other.setMarginStart(dp(8));
+            remove.setLayoutParams(other);
+        }
+        actions.addView(decide);
+        actions.addView(remove);
+        card.addView(actions);
         return card;
     }
 

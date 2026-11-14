@@ -198,8 +198,10 @@ used up.
 
 ## The “Networks” list
 
-The list (#762, part a; Settings → Network → “Networks”) shows trust and blocks in one place: the
-current network at the top, followed by saved access points grouped by Wi-Fi name. In #769, the
+The list (#762, part a; Settings → Network → “Networks”, or “Networks” in the home menu since #949)
+shows trust and blocks in one place: the current network at the top, then recently asked access
+points (#949), then saved access points grouped by Wi-Fi name. A “Settings” heading at the end holds
+the convenience switch, the protection level, the Force mode note and the glossary. In #769, the
 older views (“Allowed access points,” “Recently prevented re-enabling,” and observation list), mode
 selector, observation option, and separate name list were removed from Settings. The network area
 there still shows the current network with its action, the protection level (display only; the
@@ -240,6 +242,21 @@ for an address, lifting the address block removes that trust; blocking from the 
 the time of blocking. Lifting a **name** block instead preserves all saved data: trusted access
 points become trusted again, and unknown ones prompt. None of these actions turns Wireless
 debugging on or off.
+
+**Recently asked (#949).** Access points KeepADB prompted about and nobody answered — for
+example after the notice was swiped away while logging in to a shop's Wi-Fi — are listed under
+“Recently asked”, newest first, with the time of the prompt. The source is the prompt record
+(“recently prevented” history, at most 10 entries). Access points trusted or blocked in the meantime
+and the current network (asked in its own card) are left out. “Decide…” opens the decision dialog
+of the notice for that access point (Trust, “Block this access point only,” “Always block Wi-Fi
+name…”); “Remove from this list” deletes only the record and decides nothing. The section exists
+only while the list is shown, so the privacy mode hides it like everything else.
+
+**Other ways in (#949).** In Settings → Network, an undecided current access point offers “Block
+or decide…” next to “Trust this access point”; it opens this list on that access point. On the home
+screen, while Wireless Debugging is on and Keep-Alive is enabled, the status line says when the
+current Wi-Fi is not trusted or blocked and opens the decision (or this list for a blocked network or
+one without a prompt record), as it already did while Keep-Alive was paused.
 
 **Current network, undecided.** Instead of a separate dialog, the decision view from #766
 (`NetworkDecisionView`) is embedded in the card, without “Decide later.” It also appears when the
@@ -292,7 +309,8 @@ allowlist mode.
 The “recently prevented” history and observation list have never decided trust and are not part of
 the model. During cleanup (#769), **no key was deleted or rewritten**; both views were removed.
 “Recently prevented” history remains: the decision dialog (#766) uses its entry as the request
-record (name and BSSID) and deletes it once the request is answered. The observation list (BSSID
+record (name and BSSID) and deletes it once the request is answered. Since #949 the Networks list
+shows the unanswered entries again as “Recently asked”, still without deciding anything. The observation list (BSSID
 history, `bssid_history_*`) is no longer updated since #769, and its stored data was
 **discarded once during update** since #778 (user decision 2026-10-06): `KeepADBBssidHistory.discardLegacyOnce`
 deletes only keys with this prefix and sets the `observation_history_discarded` marker in the

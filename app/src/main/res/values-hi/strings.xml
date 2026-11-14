@@ -686,7 +686,7 @@
     <string name="networks_section_recent">हाल में पूछे गए</string>
     <string name="networks_section_settings">सेटिंग</string>
     <string name="networks_recent_hint">KeepADB ने इन वाई-फ़ाई नेटवर्क के बारे में पूछा और कोई जवाब नहीं मिला, उदाहरण के लिए क्योंकि सूचना हटा दी गई थी।</string>
-    <string name="networks_recent_asked">पूछा गया: %1$s</string>
+    <string name="networks_recent_asked">आख़िरी बार दिखा: %1$s</string>
     <string name="networks_recent_decide">निर्णय लें…</string>
     <string name="networks_recent_decide_a11y">%1$s के लिए निर्णय लें</string>
     <string name="networks_recent_remove">इस सूची से हटाएँ</string>

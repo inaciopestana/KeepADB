@@ -245,7 +245,7 @@ debugging on or off.
 
 **Recently asked (#949).** Access points KeepADB prompted about and nobody answered — for
 example after the notice was swiped away while logging in to a shop's Wi-Fi — are listed under
-“Recently asked”, newest first, with the time of the prompt. The source is the prompt record
+“Recently asked”, newest first, with the time the access point was last detected. The source is the prompt record
 (“recently prevented” history, at most 10 entries). Access points trusted or blocked in the meantime
 and the current network (asked in its own card) are left out. “Decide…” opens the decision dialog
 of the notice for that access point (Trust, “Block this access point only,” “Always block Wi-Fi

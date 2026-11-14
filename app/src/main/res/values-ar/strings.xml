@@ -690,7 +690,7 @@
     <string name="networks_section_recent">سُئل عنها مؤخرًا</string>
     <string name="networks_section_settings">الإعدادات</string>
     <string name="networks_recent_hint">سأل KeepADB عن شبكات Wi-Fi هذه ولم يتلقَّ إجابة، مثلًا لأن الإشعار أُزيل بالسحب.</string>
-    <string name="networks_recent_asked">سُئل %1$s</string>
+    <string name="networks_recent_asked">آخر ظهور %1$s</string>
     <string name="networks_recent_decide">قرِّر…</string>
     <string name="networks_recent_decide_a11y">قرِّر بشأن %1$s</string>
     <string name="networks_recent_remove">إزالة من هذه القائمة</string>

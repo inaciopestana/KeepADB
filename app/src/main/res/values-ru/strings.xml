@@ -688,7 +688,7 @@
     <string name="networks_section_recent">Недавние запросы</string>
     <string name="networks_section_settings">Настройки</string>
     <string name="networks_recent_hint">KeepADB спрашивал об этих сетях Wi-Fi и не получил ответа, например потому что уведомление было смахнуто.</string>
-    <string name="networks_recent_asked">Запрос: %1$s</string>
+    <string name="networks_recent_asked">Последний раз: %1$s</string>
     <string name="networks_recent_decide">Решить…</string>
     <string name="networks_recent_decide_a11y">Решить для %1$s</string>
     <string name="networks_recent_remove">Убрать из этого списка</string>

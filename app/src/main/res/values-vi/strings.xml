@@ -685,7 +685,7 @@ Bạn có thể kết thúc bất cứ lúc nào từ màn hình chính hoặc t
     <string name="networks_section_recent">Đã hỏi gần đây</string>
     <string name="networks_section_settings">Cài đặt</string>
     <string name="networks_recent_hint">KeepADB đã hỏi về các mạng Wi-Fi này nhưng không nhận được câu trả lời, ví dụ vì thông báo đã bị vuốt đi.</string>
-    <string name="networks_recent_asked">Đã hỏi %1$s</string>
+    <string name="networks_recent_asked">Thấy lần cuối %1$s</string>
     <string name="networks_recent_decide">Quyết định…</string>
     <string name="networks_recent_decide_a11y">Quyết định cho %1$s</string>
     <string name="networks_recent_remove">Xóa khỏi danh sách này</string>

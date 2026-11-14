@@ -687,7 +687,7 @@ Puoi terminarla in qualsiasi momento dalla schermata iniziale o dalla notifica.<
     <string name="networks_section_recent">Chiesti di recente</string>
     <string name="networks_section_settings">Impostazioni</string>
     <string name="networks_recent_hint">KeepADB ha chiesto di queste reti Wi-Fi senza ricevere risposta, ad esempio perché la notifica è stata scartata.</string>
-    <string name="networks_recent_asked">Chiesto %1$s</string>
+    <string name="networks_recent_asked">Visto l\'ultima volta %1$s</string>
     <string name="networks_recent_decide">Decidi…</string>
     <string name="networks_recent_decide_a11y">Decidi su %1$s</string>
     <string name="networks_recent_remove">Rimuovi da questo elenco</string>

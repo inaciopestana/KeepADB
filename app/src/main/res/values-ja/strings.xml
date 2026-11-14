@@ -685,7 +685,7 @@
     <string name="networks_section_recent">最近の確認</string>
     <string name="networks_section_settings">設定</string>
     <string name="networks_recent_hint">KeepADB がこれらの Wi-Fi ネットワークについて確認しましたが、応答がありませんでした（通知をスワイプして閉じた場合など）。</string>
-    <string name="networks_recent_asked">確認: %1$s</string>
+    <string name="networks_recent_asked">最終検出: %1$s</string>
     <string name="networks_recent_decide">判断する…</string>
     <string name="networks_recent_decide_a11y">%1$s について判断する</string>
     <string name="networks_recent_remove">このリストから削除</string>

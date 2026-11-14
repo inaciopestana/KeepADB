@@ -687,7 +687,7 @@ Pode terminá-lo a qualquer momento no ecrã inicial ou na notificação.</strin
     <string name="networks_section_recent">Perguntadas recentemente</string>
     <string name="networks_section_settings">Configurações</string>
     <string name="networks_recent_hint">O KeepADB perguntou sobre estas redes Wi-Fi e não obteve resposta, por exemplo porque a notificação foi descartada.</string>
-    <string name="networks_recent_asked">Perguntada %1$s</string>
+    <string name="networks_recent_asked">Visto pela última vez %1$s</string>
     <string name="networks_recent_decide">Decidir…</string>
     <string name="networks_recent_decide_a11y">Decidir sobre %1$s</string>
     <string name="networks_recent_remove">Remover desta lista</string>

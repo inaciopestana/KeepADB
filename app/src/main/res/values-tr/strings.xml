@@ -686,7 +686,7 @@ Bu sürede engellemeleriniz ve güvenilir ağlarınız geçerli olmaz.
     <string name="networks_section_recent">Son sorulanlar</string>
     <string name="networks_section_settings">Ayarlar</string>
     <string name="networks_recent_hint">KeepADB bu Wi-Fi ağlarını sordu ve yanıt alamadı; örneğin bildirim kaydırılarak kapatıldığı için.</string>
-    <string name="networks_recent_asked">Soruldu: %1$s</string>
+    <string name="networks_recent_asked">Son görülme: %1$s</string>
     <string name="networks_recent_decide">Karar ver…</string>
     <string name="networks_recent_decide_a11y">%1$s için karar ver</string>
     <string name="networks_recent_remove">Bu listeden kaldır</string>

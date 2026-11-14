@@ -685,7 +685,7 @@ Anda dapat mengakhirinya kapan saja dari layar utama atau notifikasi.</string>
     <string name="networks_section_recent">Baru ditanyakan</string>
     <string name="networks_section_settings">Setelan</string>
     <string name="networks_recent_hint">KeepADB menanyakan jaringan Wi-Fi ini dan tidak mendapat jawaban, misalnya karena notifikasi digeser.</string>
-    <string name="networks_recent_asked">Ditanyakan %1$s</string>
+    <string name="networks_recent_asked">Terakhir terlihat %1$s</string>
     <string name="networks_recent_decide">Putuskan…</string>
     <string name="networks_recent_decide_a11y">Putuskan untuk %1$s</string>
     <string name="networks_recent_remove">Hapus dari daftar ini</string>

@@ -686,7 +686,7 @@ Je kunt het op elk moment beëindigen via het startscherm of de melding.</string
     <string name="networks_section_recent">Recent gevraagd</string>
     <string name="networks_section_settings">Instellingen</string>
     <string name="networks_recent_hint">KeepADB heeft naar deze wifi-netwerken gevraagd en geen antwoord gekregen, bijvoorbeeld omdat de melding is weggeveegd.</string>
-    <string name="networks_recent_asked">Gevraagd %1$s</string>
+    <string name="networks_recent_asked">Laatst gezien %1$s</string>
     <string name="networks_recent_decide">Beslissen…</string>
     <string name="networks_recent_decide_a11y">Beslissen over %1$s</string>
     <string name="networks_recent_remove">Uit deze lijst verwijderen</string>

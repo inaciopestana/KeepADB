@@ -28,7 +28,7 @@ are retrospective issue-version records and were never published as separate rel
 ### Added
 - **"Recently asked" in the Networks list (#949):** access points KeepADB prompted about and nobody
   answered (for example after the prompt was swiped away on a public Wi-Fi) are listed between the
-  current network and the saved ones, newest first, with the time of the prompt. "Decide…" opens the
+  current network and the saved ones, newest first, with the time the access point was last detected. "Decide…" opens the
   same decision dialog as the notification (#766: trust, block the access point, block the Wi-Fi
   name); "Remove from this list" drops only the record. The source is the existing
   `KeepADBBlockedNetworkHistory` (max. 10 entries); trusted, blocked and current access points are

@@ -688,7 +688,7 @@ Możesz zakończyć tryb w dowolnej chwili z ekranu głównego lub z powiadomien
     <string name="networks_section_recent">Ostatnio pytano</string>
     <string name="networks_section_settings">Ustawienia</string>
     <string name="networks_recent_hint">KeepADB pytał o te sieci Wi-Fi i nie dostał odpowiedzi, na przykład dlatego, że powiadomienie zostało odrzucone.</string>
-    <string name="networks_recent_asked">Pytano %1$s</string>
+    <string name="networks_recent_asked">Ostatnio widziano %1$s</string>
     <string name="networks_recent_decide">Zdecyduj…</string>
     <string name="networks_recent_decide_a11y">Zdecyduj o %1$s</string>
     <string name="networks_recent_remove">Usuń z tej listy</string>

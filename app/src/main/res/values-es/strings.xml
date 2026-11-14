@@ -687,7 +687,7 @@ Puedes terminarlo en cualquier momento desde la pantalla de inicio o la notifica
     <string name="networks_section_recent">Consultadas recientemente</string>
     <string name="networks_section_settings">Ajustes</string>
     <string name="networks_recent_hint">KeepADB preguntó por estas redes Wi-Fi y no obtuvo respuesta, por ejemplo porque se descartó la notificación.</string>
-    <string name="networks_recent_asked">Consultada %1$s</string>
+    <string name="networks_recent_asked">Visto por última vez %1$s</string>
     <string name="networks_recent_decide">Decidir…</string>
     <string name="networks_recent_decide_a11y">Decidir sobre %1$s</string>
     <string name="networks_recent_remove">Quitar de esta lista</string>

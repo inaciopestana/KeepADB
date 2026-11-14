@@ -685,7 +685,7 @@
     <string name="networks_section_recent">最近詢問</string>
     <string name="networks_section_settings">設定</string>
     <string name="networks_recent_hint">KeepADB 詢問過這些 Wi-Fi 網路，但沒有得到回覆，例如因為通知被滑掉了。</string>
-    <string name="networks_recent_asked">詢問時間：%1$s</string>
+    <string name="networks_recent_asked">上次偵測到：%1$s</string>
     <string name="networks_recent_decide">做出決定…</string>
     <string name="networks_recent_decide_a11y">為 %1$s 做出決定</string>
     <string name="networks_recent_remove">從這份清單移除</string>

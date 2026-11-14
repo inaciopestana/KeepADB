@@ -687,7 +687,7 @@ Vous pouvez l\'arrêter à tout moment depuis l\'écran d\'accueil ou la notific
     <string name="networks_section_recent">Demandés récemment</string>
     <string name="networks_section_settings">Paramètres</string>
     <string name="networks_recent_hint">KeepADB a posé la question pour ces réseaux Wi-Fi sans obtenir de réponse, par exemple parce que la notification a été balayée.</string>
-    <string name="networks_recent_asked">Demandé %1$s</string>
+    <string name="networks_recent_asked">Vu pour la dernière fois %1$s</string>
     <string name="networks_recent_decide">Décider…</string>
     <string name="networks_recent_decide_a11y">Décider pour %1$s</string>
     <string name="networks_recent_remove">Retirer de cette liste</string>

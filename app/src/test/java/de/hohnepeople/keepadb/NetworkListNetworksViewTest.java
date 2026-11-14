@@ -674,7 +674,8 @@ public class NetworkListNetworksViewTest {
 
         Button decide = findButton(root, context.getString(R.string.networks_recent_decide));
         assertNotNull(texts(root), decide);
-        assertEquals(context.getString(R.string.networks_recent_decide_a11y, STORE),
+        assertEquals(context.getString(R.string.networks_recent_decide_a11y,
+                        STORE + ", " + STORE_AP.toUpperCase(Locale.ROOT)),
                 decide.getContentDescription().toString());
         decide.performClick();
         Intent intent = shadowOf(activity).getNextStartedActivity();
@@ -690,6 +691,28 @@ public class NetworkListNetworksViewTest {
         assertTrue(KeepADBBlockedNetworkHistory.getEntries(context).isEmpty());
         assertFalse(KeepADBNetworkBlocklist.isBssidBlocked(context, STORE_AP));
         assertFalse(everythingShown(activity).contains(STORE));
+    }
+
+    /** #799/#949: a focus request for a recently asked access point marks its row. */
+    @Test
+    public void aFocusRequestForARecentlyAskedAccessPointHighlightsItsRow() {
+        KeepADBPreferences.setAppPrivacyEnabled(context, false);
+        connectNothing();
+        recordPrompt(STORE, STORE_AP, System.currentTimeMillis());
+        recordPrompt(CAFE, CAFE_AP, System.currentTimeMillis());
+
+        NetworkListActivity activity = Robolectric.buildActivity(NetworkListActivity.class,
+                NetworkListActivity.intent(context, STORE_AP)).setup().get();
+        ShadowLooper.idleMainLooper();
+
+        View selected = null;
+        for (View view : allViews(activity.getWindow().getDecorView())) {
+            if (view.isSelected() && view instanceof LinearLayout) selected = view;
+        }
+        assertNotNull("The row of the requested access point is marked", selected);
+        String row = texts(selected);
+        assertTrue(row, row.contains(STORE));
+        assertFalse(row, row.contains(CAFE));
     }
 
     @Test

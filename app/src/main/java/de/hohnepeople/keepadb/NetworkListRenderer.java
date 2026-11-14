@@ -459,7 +459,14 @@ final class NetworkListRenderer {
         hint.setPadding(0, dp(4), 0, 0);
         root.addView(hint);
         for (KeepADBBlockedNetworkHistory.Entry entry : entries) {
-            root.addView(recentRow(entry));
+            View row = recentRow(entry);
+            // #799: "Block or decide…" in Settings focuses the access point it showed; after a roam
+            // that is no longer the current card but may be one of these rows.
+            if (highlightView == null && isHighlight(entry.bssid)) {
+                highlightView = row;
+                row.setSelected(true);
+            }
+            root.addView(row);
         }
     }
 
@@ -482,7 +489,9 @@ final class NetworkListRenderer {
         Button decide = stackedButton(activity.getString(R.string.networks_recent_decide), true,
                 v -> activity.startActivity(
                         KeepADBNetworkTrustPrompt.decisionIntent(activity, entry.bssid)));
-        decide.setContentDescription(activity.getString(R.string.networks_recent_decide_a11y, title));
+        // Several access points can share a name: the spoken target carries the address too.
+        String target = named ? title + ", " + bssidLine : bssidLine;
+        decide.setContentDescription(activity.getString(R.string.networks_recent_decide_a11y, target));
         card.addView(decide);
         Button remove = plainButton(activity.getString(R.string.networks_recent_remove), v -> {
             KeepADBBlockedNetworkHistory.remove(activity, entry.bssid);
@@ -490,7 +499,7 @@ final class NetworkListRenderer {
                     "recent_prompt");
             onChanged.run();
         });
-        remove.setContentDescription(activity.getString(R.string.networks_recent_remove_a11y, title));
+        remove.setContentDescription(activity.getString(R.string.networks_recent_remove_a11y, target));
         card.addView(remove);
         return card;
     }

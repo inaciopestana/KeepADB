@@ -138,8 +138,8 @@
     <string name="settings_section_misc">अन्य</string>
     <string name="settings_section_notification">सूचना</string>
     <string name="settings_hide_notification_toggle">स्थायी सूचना</string>
-    <string name="settings_hide_notification_subtext">सूचना पैनल में डिबगिंग की स्थिति और त्वरित पहुँच दिखाता है। बंद करने पर केवल यह सूचना छिपती है; Keep-Alive, विजेट और त्वरित सेटिंग टाइल काम करते रहते हैं। कनेक्शन विवरण नीचे अलग से तय होते हैं और पते तथा नेटवर्क नाम दिखा सकते हैं।</string>
-    <string name="settings_hide_notification_subtext_keepalive">सूचना पैनल में डिबगिंग की स्थिति और त्वरित पहुँच दिखाता है। बंद करने पर केवल यह सूचना छिपती है; Keep-Alive, विजेट और त्वरित सेटिंग टाइल काम करते रहते हैं। कनेक्शन विवरण नीचे अलग से तय होते हैं और पते तथा नेटवर्क नाम दिखा सकते हैं।\n\nKeep-Alive सक्रिय होने पर Android को अग्रभूमि सेवा के लिए यह सूचना चाहिए। स्विच लॉक रहता है। Keep-Alive बंद करने पर आपका सहेजा हुआ विकल्प फिर लागू होता है।</string>
+    <string name="settings_hide_notification_subtext">सूचना पैनल में डिबगिंग की स्थिति और त्वरित पहुँच दिखाता है। बंद करने पर केवल यह सूचना छिपती है; Keep-Alive, विजेट और त्वरित सेटिंग टाइल काम करते रहते हैं। कनेक्शन विवरण दिखेंगे या नहीं, यह गोपनीयता में “सूचनाओं में छिपाएँ” स्विच तय करता है; वे पते तथा नेटवर्क नाम दिखा सकते हैं।</string>
+    <string name="settings_hide_notification_subtext_keepalive">सूचना पैनल में डिबगिंग की स्थिति और त्वरित पहुँच दिखाता है। बंद करने पर केवल यह सूचना छिपती है; Keep-Alive, विजेट और त्वरित सेटिंग टाइल काम करते रहते हैं। कनेक्शन विवरण दिखेंगे या नहीं, यह गोपनीयता में “सूचनाओं में छिपाएँ” स्विच तय करता है; वे पते तथा नेटवर्क नाम दिखा सकते हैं।\n\nKeep-Alive सक्रिय होने पर Android को अग्रभूमि सेवा के लिए यह सूचना चाहिए। स्विच लॉक रहता है। Keep-Alive बंद करने पर आपका सहेजा हुआ विकल्प फिर लागू होता है।</string>
     <string name="settings_section_display">डिस्प्ले</string>
     <string name="settings_keep_display_on_toggle">जब तक KeepADB फ़ोरग्राउंड में है, डिस्प्ले चालू रखें</string>
     <string name="settings_keep_display_on_subtext">यह सेटिंग केवल तब तक स्क्रीन को चालू रखती है जब तक यह ऐप खुला है। ऐप छोड़ते ही स्क्रीन सामान्य रूप से बंद हो जाती है।</string>

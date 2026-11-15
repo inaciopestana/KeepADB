@@ -138,8 +138,8 @@
     <string name="settings_section_misc">其他</string>
     <string name="settings_section_notification">通知</string>
     <string name="settings_hide_notification_toggle">常駐通知</string>
-    <string name="settings_hide_notification_subtext">在通知欄中顯示偵錯狀態和快捷入口。關閉後僅隱藏此狀態通知；Keep-Alive、小工具和快速設定圖塊仍可正常使用。連線詳細資訊在下方獨立設定，可能顯示位址和網路名稱。</string>
-    <string name="settings_hide_notification_subtext_keepalive">在通知欄中顯示偵錯狀態和快捷入口。關閉後僅隱藏此狀態通知；Keep-Alive、小工具和快速設定圖塊仍可正常使用。連線詳細資訊在下方獨立設定，可能顯示位址和網路名稱。\n\nKeep-Alive 開啟時，Android 要求前景服務顯示此通知，因此開關被鎖定。關閉 Keep-Alive 後將重新套用已儲存的選擇。</string>
+    <string name="settings_hide_notification_subtext">在通知欄中顯示偵錯狀態和快捷入口。關閉後僅隱藏此狀態通知；Keep-Alive、小工具和快速設定圖塊仍可正常使用。是否顯示連線詳細資訊由「隱私」中的「在通知中隱藏」決定，可能顯示位址和網路名稱。</string>
+    <string name="settings_hide_notification_subtext_keepalive">在通知欄中顯示偵錯狀態和快捷入口。關閉後僅隱藏此狀態通知；Keep-Alive、小工具和快速設定圖塊仍可正常使用。是否顯示連線詳細資訊由「隱私」中的「在通知中隱藏」決定，可能顯示位址和網路名稱。\n\nKeep-Alive 開啟時，Android 要求前景服務顯示此通知，因此開關被鎖定。關閉 Keep-Alive 後將重新套用已儲存的選擇。</string>
     <string name="settings_section_display">螢幕</string>
     <string name="settings_keep_display_on_toggle">KeepADB 在前景執行時保持螢幕開啟</string>
     <string name="settings_keep_display_on_subtext">僅在此應用程式開啟期間保持螢幕開啟。離開應用程式後螢幕會照常熄滅。</string>

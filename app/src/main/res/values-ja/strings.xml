@@ -138,8 +138,8 @@
     <string name="settings_section_misc">その他</string>
     <string name="settings_section_notification">通知</string>
     <string name="settings_hide_notification_toggle">常駐通知</string>
-    <string name="settings_hide_notification_subtext">通知欄にデバッグ状態とクイックアクセスを表示します。オフにしてもこの通知が非表示になるだけで、Keep-Alive、ウィジェット、クイック設定タイルは引き続き動作します。接続詳細は下で別に設定し、アドレスやネットワーク名が表示される場合があります。</string>
-    <string name="settings_hide_notification_subtext_keepalive">通知欄にデバッグ状態とクイックアクセスを表示します。オフにしてもこの通知が非表示になるだけで、Keep-Alive、ウィジェット、クイック設定タイルは引き続き動作します。接続詳細は下で別に設定し、アドレスやネットワーク名が表示される場合があります。\n\nKeep-Alive が有効な間は、Android がフォアグラウンドサービスの通知を必要とするため、スイッチは操作できません。Keep-Alive をオフにすると保存済みの選択が再び適用されます。</string>
+    <string name="settings_hide_notification_subtext">通知欄にデバッグ状態とクイックアクセスを表示します。オフにしてもこの通知が非表示になるだけで、Keep-Alive、ウィジェット、クイック設定タイルは引き続き動作します。接続詳細を表示するかどうかは、プライバシーの「通知で非表示」で設定します。アドレスやネットワーク名が表示される場合があります。</string>
+    <string name="settings_hide_notification_subtext_keepalive">通知欄にデバッグ状態とクイックアクセスを表示します。オフにしてもこの通知が非表示になるだけで、Keep-Alive、ウィジェット、クイック設定タイルは引き続き動作します。接続詳細を表示するかどうかは、プライバシーの「通知で非表示」で設定します。アドレスやネットワーク名が表示される場合があります。\n\nKeep-Alive が有効な間は、Android がフォアグラウンドサービスの通知を必要とするため、スイッチは操作できません。Keep-Alive をオフにすると保存済みの選択が再び適用されます。</string>
     <string name="settings_section_display">ディスプレイ</string>
     <string name="settings_keep_display_on_toggle">KeepADBが前面表示されている間、画面をオンのままにする</string>
     <string name="settings_keep_display_on_subtext">このアプリを開いている間だけ画面をオンのままにします。アプリを離れると画面は通常どおり消灯します。</string>

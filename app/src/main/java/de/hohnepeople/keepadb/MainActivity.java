@@ -333,7 +333,6 @@ public class MainActivity extends Activity {
         KeepADBForceMode.setStateListener(this::refresh);
         refresh();
         KeepADBEndpointCoordinator.refresh(this);
-        KeepADBUsbReceiver.refresh(this);
     }
 
     @Override
@@ -1028,7 +1027,6 @@ public class MainActivity extends Activity {
         KeepADBWidget.refreshAll(this);
         KeepADBEndpointCoordinator.refresh(this);
         KeepADBTileService.requestRefresh(this);
-        KeepADBUsbReceiver.refresh(this);
     }
 
     /**

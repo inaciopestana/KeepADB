@@ -20,8 +20,6 @@ import android.widget.Toast;
 
 /** Central settings screen for KeepADB options (Keep-Alive, Language, Webhook, etc.). */
 public class SettingsActivity extends Activity {
-    /** Removed with the notification (#956 step 2); kept for one commit so the build stays intact. */
-    public static final String EXTRA_FOCUS_USB = "focus_usb";
     /** #763: Intent extra requesting that the force-mode row be expanded and scrolled into view. */
     public static final String EXTRA_FOCUS_FORCE = "focus_force";
     /**

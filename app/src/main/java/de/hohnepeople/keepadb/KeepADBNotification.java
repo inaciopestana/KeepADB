@@ -219,7 +219,7 @@ final class KeepADBNotification {
     private static Notification buildNotification(Context context, String host, int port) {
         String title = context.getString(R.string.notification_title_active, context.getString(R.string.app_name));
         // #597/#904: the port/IP endpoint string follows the notification privacy switch, the same
-        // one the USB and trust-prompt notifications use. While it is on, only the status is
+        // one the trust-prompt notification uses. While it is on, only the status is
         // shown; while it is off (the default) the text reads "Port <port> @ <ip>".
         CharSequence content = KeepADBPreferences.isNotificationPrivacyEnabled(context)
                 ? context.getString(R.string.notification_text_active_hidden)
@@ -253,8 +253,8 @@ final class KeepADBNotification {
                 .setOngoing(true)
                 .setShowWhen(false)
                 // #597: publicVersion never carries the endpoint, regardless of the privacy
-                // setting -- same rule #589/#592 already apply to the USB and trust-prompt
-                // notifications. Android only shows it while sensitive lock-screen content is
+                // setting -- same rule #589/#592 already apply to the trust-prompt
+                // notification. Android only shows it while sensitive lock-screen content is
                 // redacted; with it allowed, the private content above (gated by the check just
                 // above) is shown instead.
                 .setPublicVersion(publicVersion(context, title))

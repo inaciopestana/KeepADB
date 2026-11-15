@@ -118,6 +118,11 @@ public class KeepADBRegisterWireFormatContractTest {
         assertEquals("keepadb-app", KeepADBRegisterPayload.SOURCE);
         assertEquals(Collections.singleton("wlan-adb"),
                 KeepADBRegisterPayload.SERVER_SUPPORTED_METHODS);
+        List<String> methods = new ArrayList<>();
+        for (KeepADBRegisterPayload.Type type : KeepADBRegisterPayload.Type.values()) {
+            methods.add(type.method);
+        }
+        assertEquals("the methods a payload can name", Arrays.asList("wlan-adb", "vpn-adb"), methods);
     }
 
     /**

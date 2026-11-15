@@ -565,6 +565,9 @@ You can end it at any time from the home screen or the notification.</string>
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">Language</string>
     <string name="menu_item_all_settings">Settings</string>
+    <!-- #954: launcher shortcut labels; "Wifi-ADB" is the product term and stays as it is. -->
+    <string name="shortcut_toggle_short">Toggle Wifi-ADB</string>
+    <string name="shortcut_toggle_long">Switch Wifi-ADB on or off</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">Security warnings</string>

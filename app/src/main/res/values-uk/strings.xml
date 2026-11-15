@@ -558,6 +558,8 @@
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">Мова</string>
     <string name="menu_item_all_settings">Налаштування</string>
+    <string name="shortcut_toggle_short">Перемкнути Wifi-ADB</string>
+    <string name="shortcut_toggle_long">Увімкнути або вимкнути Wifi-ADB</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">Попередження безпеки</string>

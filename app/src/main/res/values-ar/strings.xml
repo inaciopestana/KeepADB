@@ -558,6 +558,8 @@
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">اللغة</string>
     <string name="menu_item_all_settings">الإعدادات</string>
+    <string name="shortcut_toggle_short">تبديل Wifi-ADB</string>
+    <string name="shortcut_toggle_long">تشغيل Wifi-ADB أو إيقافه</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">تحذيرات الأمان</string>

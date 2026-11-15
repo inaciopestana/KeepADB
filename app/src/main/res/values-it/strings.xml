@@ -558,6 +558,8 @@ Puoi terminarla in qualsiasi momento dalla schermata iniziale o dalla notifica.<
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">Lingua</string>
     <string name="menu_item_all_settings">Impostazioni</string>
+    <string name="shortcut_toggle_short">Commuta Wifi-ADB</string>
+    <string name="shortcut_toggle_long">Attiva o disattiva Wifi-ADB</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">Avvisi di sicurezza</string>

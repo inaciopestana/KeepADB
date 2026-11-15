@@ -558,6 +558,8 @@
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">언어</string>
     <string name="menu_item_all_settings">설정</string>
+    <string name="shortcut_toggle_short">Wifi-ADB 전환</string>
+    <string name="shortcut_toggle_long">Wifi-ADB 켜기 또는 끄기</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">보안 경고</string>

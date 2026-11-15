@@ -558,6 +558,8 @@
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">语言</string>
     <string name="menu_item_all_settings">设置</string>
+    <string name="shortcut_toggle_short">切换 Wifi-ADB</string>
+    <string name="shortcut_toggle_long">开启或关闭 Wifi-ADB</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">安全警告</string>

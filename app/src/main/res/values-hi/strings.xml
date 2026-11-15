@@ -558,6 +558,8 @@
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">भाषा</string>
     <string name="menu_item_all_settings">सेटिंग्स</string>
+    <string name="shortcut_toggle_short">Wifi-ADB टॉगल करें</string>
+    <string name="shortcut_toggle_long">Wifi-ADB चालू या बंद करें</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">सुरक्षा चेतावनियाँ</string>

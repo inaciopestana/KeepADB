@@ -558,6 +558,8 @@ Beenden kannst du jederzeit über die Startseite oder die Benachrichtigung.</str
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">Sprache</string>
     <string name="menu_item_all_settings">Einstellungen</string>
+    <string name="shortcut_toggle_short">Wifi-ADB umschalten</string>
+    <string name="shortcut_toggle_long">Wifi-ADB ein- oder ausschalten</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">Sicherheitswarnungen</string>

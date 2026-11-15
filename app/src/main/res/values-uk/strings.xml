@@ -319,7 +319,7 @@
     <string name="network_status_allowed_name">Довірено за назвою Wi-Fi</string>
     <string name="network_status_not_allowed">Невідомо</string>
     <string name="network_badge_blocked">Заблоковано</string>
-    <string name="networks_title">Мережі</string>
+    <string name="networks_title">Мережі Wi-Fi</string>
     <string name="networks_intro">Keep-Alive може знову вмикати бездротове налагодження в довірених мережах і ніколи не робить цього в заблокованих. Увімкнути вручну можна завжди.</string>
     <string name="networks_glossary_toggle">Терміни пояснено</string>
     <string name="networks_glossary_ssid">Назва Wi-Fi (SSID): назва, яку передає мережа Wi-Fi. Будь-хто може створити мережу з такою самою назвою.</string>
@@ -557,7 +557,7 @@
     <string name="status_tap_to_open_list">Торкніться, щоб відкрити список мереж</string>
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">Мова</string>
-    <string name="menu_item_all_settings">Усі налаштування</string>
+    <string name="menu_item_all_settings">Налаштування</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">Попередження безпеки</string>

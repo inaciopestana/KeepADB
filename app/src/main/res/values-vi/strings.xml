@@ -319,7 +319,7 @@
     <string name="network_status_allowed_name">Tin cậy theo tên Wi-Fi</string>
     <string name="network_status_not_allowed">Không rõ</string>
     <string name="network_badge_blocked">Đã chặn</string>
-    <string name="networks_title">Mạng</string>
+    <string name="networks_title">Mạng Wi-Fi</string>
     <string name="networks_intro">Keep-Alive có thể bật lại Gỡ lỗi không dây trong các mạng tin cậy, không bao giờ trong mạng đã chặn. Bật thủ công luôn hoạt động.</string>
     <string name="networks_glossary_toggle">Giải thích thuật ngữ</string>
     <string name="networks_glossary_ssid">Tên Wi-Fi (SSID): tên mà mạng Wi-Fi phát ra. Ai cũng có thể tạo một mạng có cùng tên.</string>
@@ -557,7 +557,7 @@ Bạn có thể kết thúc bất cứ lúc nào từ màn hình chính hoặc t
     <string name="status_tap_to_open_list">Chạm để mở danh sách mạng</string>
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">Ngôn ngữ</string>
-    <string name="menu_item_all_settings">Tất cả cài đặt</string>
+    <string name="menu_item_all_settings">Cài đặt</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">Cảnh báo bảo mật</string>

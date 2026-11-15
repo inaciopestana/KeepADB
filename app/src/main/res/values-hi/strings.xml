@@ -319,7 +319,7 @@
     <string name="network_status_allowed_name">Wi-Fi नाम से भरोसेमंद</string>
     <string name="network_status_not_allowed">अज्ञात</string>
     <string name="network_badge_blocked">रोका गया</string>
-    <string name="networks_title">नेटवर्क</string>
+    <string name="networks_title">Wi-Fi नेटवर्क</string>
     <string name="networks_intro">Keep-Alive भरोसेमंद नेटवर्क में वायरलेस डीबगिंग फिर से चालू कर सकता है, रोके गए नेटवर्क में कभी नहीं। हाथ से चालू करना हमेशा काम करता है।</string>
     <string name="networks_glossary_toggle">शब्दों की व्याख्या</string>
     <string name="networks_glossary_ssid">Wi-Fi नाम (SSID): वह नाम जो Wi-Fi नेटवर्क प्रसारित करता है। कोई भी उसी नाम का नेटवर्क बना सकता है।</string>
@@ -557,7 +557,7 @@
     <string name="status_tap_to_open_list">नेटवर्क सूची खोलने के लिए टैप करें</string>
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">भाषा</string>
-    <string name="menu_item_all_settings">सभी सेटिंग्स</string>
+    <string name="menu_item_all_settings">सेटिंग्स</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">सुरक्षा चेतावनियाँ</string>

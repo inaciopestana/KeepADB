@@ -319,7 +319,7 @@
     <string name="network_status_allowed_name">Доверено по имени Wi-Fi</string>
     <string name="network_status_not_allowed">Неизвестно</string>
     <string name="network_badge_blocked">Заблокировано</string>
-    <string name="networks_title">Сети</string>
+    <string name="networks_title">Сети Wi-Fi</string>
     <string name="networks_intro">Keep-Alive может снова включать беспроводную отладку в доверенных сетях и никогда не делает этого в заблокированных. Включить вручную можно всегда.</string>
     <string name="networks_glossary_toggle">Термины объяснены</string>
     <string name="networks_glossary_ssid">Имя Wi-Fi (SSID): имя, которое передаёт сеть Wi-Fi. Любой человек может создать сеть с таким же именем.</string>
@@ -557,7 +557,7 @@
     <string name="status_tap_to_open_list">Нажмите, чтобы открыть список сетей</string>
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">Язык</string>
-    <string name="menu_item_all_settings">Все настройки</string>
+    <string name="menu_item_all_settings">Настройки</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">Предупреждения безопасности</string>

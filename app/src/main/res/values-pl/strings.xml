@@ -319,7 +319,7 @@
     <string name="network_status_allowed_name">Zaufany według nazwy Wi-Fi</string>
     <string name="network_status_not_allowed">Nieznany</string>
     <string name="network_badge_blocked">Zablokowany</string>
-    <string name="networks_title">Sieci</string>
+    <string name="networks_title">Sieci Wi-Fi</string>
     <string name="networks_intro">Keep-Alive może ponownie włączać debugowanie bezprzewodowe w zaufanych sieciach, nigdy w zablokowanych. Ręczne włączenie zawsze działa.</string>
     <string name="networks_glossary_toggle">Objaśnienie pojęć</string>
     <string name="networks_glossary_ssid">Nazwa Wi-Fi (SSID): nazwa, którą rozgłasza sieć Wi-Fi. Każdy może uruchomić sieć o takiej samej nazwie.</string>
@@ -557,7 +557,7 @@ Możesz zakończyć tryb w dowolnej chwili z ekranu głównego lub z powiadomien
     <string name="status_tap_to_open_list">Dotknij, aby otworzyć listę sieci</string>
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">Język</string>
-    <string name="menu_item_all_settings">Wszystkie ustawienia</string>
+    <string name="menu_item_all_settings">Ustawienia</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">Ostrzeżenia bezpieczeństwa</string>

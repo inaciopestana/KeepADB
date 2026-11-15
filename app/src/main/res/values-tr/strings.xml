@@ -319,7 +319,7 @@
     <string name="network_status_allowed_name">Wi-Fi adıyla güvenilir</string>
     <string name="network_status_not_allowed">Bilinmiyor</string>
     <string name="network_badge_blocked">Engellendi</string>
-    <string name="networks_title">Ağlar</string>
+    <string name="networks_title">Wi-Fi ağları</string>
     <string name="networks_intro">Keep-Alive, Kablosuz Hata Ayıklamayı güvenilir ağlarda yeniden açabilir, engellenen ağlarda asla. Elle açmak her zaman çalışır.</string>
     <string name="networks_glossary_toggle">Terimler açıklandı</string>
     <string name="networks_glossary_ssid">Wi-Fi adı (SSID): bir Wi-Fi ağının yayınladığı ad. Herkes aynı adla bir ağ kurabilir.</string>
@@ -557,7 +557,7 @@ Bu sürede engellemeleriniz ve güvenilir ağlarınız geçerli olmaz.
     <string name="status_tap_to_open_list">Ağ listesini açmak için dokunun</string>
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">Dil</string>
-    <string name="menu_item_all_settings">Tüm ayarlar</string>
+    <string name="menu_item_all_settings">Ayarlar</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">Güvenlik uyarıları</string>

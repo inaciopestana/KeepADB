@@ -319,7 +319,7 @@
     <string name="network_status_allowed_name">Approuvé par nom Wi-Fi</string>
     <string name="network_status_not_allowed">Inconnu</string>
     <string name="network_badge_blocked">Bloqué</string>
-    <string name="networks_title">Réseaux</string>
+    <string name="networks_title">Réseaux Wi-Fi</string>
     <string name="networks_intro">Keep-Alive peut réactiver le débogage sans fil dans les réseaux approuvés, jamais dans les réseaux bloqués. L’activation manuelle fonctionne toujours.</string>
     <string name="networks_glossary_toggle">Termes expliqués</string>
     <string name="networks_glossary_ssid">Nom du réseau Wi-Fi (SSID) : le nom que diffuse un réseau Wi-Fi. N’importe qui peut créer un réseau portant le même nom.</string>
@@ -557,7 +557,7 @@ Vous pouvez l\'arrêter à tout moment depuis l\'écran d\'accueil ou la notific
     <string name="status_tap_to_open_list">Touchez pour ouvrir la liste des réseaux</string>
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">Langue</string>
-    <string name="menu_item_all_settings">Tous les paramètres</string>
+    <string name="menu_item_all_settings">Paramètres</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">Alertes de sécurité</string>

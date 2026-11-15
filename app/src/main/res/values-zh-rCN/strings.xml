@@ -319,7 +319,7 @@
     <string name="network_status_allowed_name">按 Wi-Fi 名称信任</string>
     <string name="network_status_not_allowed">未知</string>
     <string name="network_badge_blocked">已拦截</string>
-    <string name="networks_title">网络</string>
+    <string name="networks_title">Wi-Fi 网络</string>
     <string name="networks_intro">Keep-Alive 可以在已信任的网络中重新开启无线调试，在已拦截的网络中则绝不会。手动开启始终可用。</string>
     <string name="networks_glossary_toggle">术语说明</string>
     <string name="networks_glossary_ssid">Wi-Fi 名称（SSID）：Wi-Fi 网络广播的名称。任何人都可以建立同名网络。</string>
@@ -557,7 +557,7 @@
     <string name="status_tap_to_open_list">点按以打开网络列表</string>
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">语言</string>
-    <string name="menu_item_all_settings">所有设置</string>
+    <string name="menu_item_all_settings">设置</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">安全警告</string>

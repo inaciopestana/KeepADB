@@ -326,7 +326,7 @@
     <!-- #762: a blocked network is shown as such, not as "not allowed". -->
     <string name="network_badge_blocked">Blocked</string>
     <!-- #762: the single list of networks (trusted / blocked) and its dialogs. -->
-    <string name="networks_title">Networks</string>
+    <string name="networks_title">Wi-Fi networks</string>
     <string name="networks_intro">Keep-Alive may turn Wireless Debugging back on in trusted networks, never in blocked ones. Turning it on manually always works.</string>
     <string name="networks_glossary_toggle">Terms explained</string>
     <string name="networks_glossary_ssid">Wi-Fi name (SSID): the name a Wi-Fi network broadcasts. Anyone can set up a network with the same name.</string>
@@ -564,7 +564,7 @@ You can end it at any time from the home screen or the notification.</string>
     <string name="status_tap_to_open_list">Tap to open the network list</string>
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">Language</string>
-    <string name="menu_item_all_settings">All settings</string>
+    <string name="menu_item_all_settings">Settings</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">Security warnings</string>

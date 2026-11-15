@@ -319,7 +319,7 @@
     <string name="network_status_allowed_name">依 Wi-Fi 名稱信任</string>
     <string name="network_status_not_allowed">未知</string>
     <string name="network_badge_blocked">已封鎖</string>
-    <string name="networks_title">網路</string>
+    <string name="networks_title">Wi-Fi 網路</string>
     <string name="networks_intro">Keep-Alive 可以在已信任的網路中重新開啟無線偵錯，在已封鎖的網路中則絕不會。手動開啟一律可用。</string>
     <string name="networks_glossary_toggle">用語說明</string>
     <string name="networks_glossary_ssid">Wi-Fi 名稱（SSID）：Wi-Fi 網路廣播的名稱。任何人都可以建立同名網路。</string>
@@ -557,7 +557,7 @@
     <string name="status_tap_to_open_list">輕觸以開啟網路清單</string>
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">語言</string>
-    <string name="menu_item_all_settings">所有設定</string>
+    <string name="menu_item_all_settings">設定</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">安全警告</string>

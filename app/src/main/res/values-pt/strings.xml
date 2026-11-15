@@ -319,7 +319,7 @@
     <string name="network_status_allowed_name">Fiável pelo nome do Wi-Fi</string>
     <string name="network_status_not_allowed">Desconhecido</string>
     <string name="network_badge_blocked">Bloqueado</string>
-    <string name="networks_title">Redes</string>
+    <string name="networks_title">Redes Wi-Fi</string>
     <string name="networks_intro">O Keep-Alive pode voltar a ativar a depuração sem fio nas redes fiáveis, nunca nas bloqueadas. Ativar manualmente funciona sempre.</string>
     <string name="networks_glossary_toggle">Termos explicados</string>
     <string name="networks_glossary_ssid">Nome do Wi-Fi (SSID): o nome que uma rede Wi-Fi transmite. Qualquer pessoa pode criar uma rede com o mesmo nome.</string>
@@ -557,7 +557,7 @@ Pode terminá-lo a qualquer momento no ecrã inicial ou na notificação.</strin
     <string name="status_tap_to_open_list">Toque para abrir a lista de redes</string>
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">Idioma</string>
-    <string name="menu_item_all_settings">Todas as configurações</string>
+    <string name="menu_item_all_settings">Configurações</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">Avisos de segurança</string>

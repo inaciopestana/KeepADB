@@ -319,7 +319,7 @@
     <string name="network_status_allowed_name">موثوق بحسب اسم Wi-Fi</string>
     <string name="network_status_not_allowed">غير معروف</string>
     <string name="network_badge_blocked">محظور</string>
-    <string name="networks_title">الشبكات</string>
+    <string name="networks_title">شبكات Wi-Fi</string>
     <string name="networks_intro">يمكن لـ Keep-Alive إعادة تفعيل تصحيح الأخطاء اللاسلكي في الشبكات الموثوقة، وليس في الشبكات المحظورة أبدًا. التشغيل اليدوي يعمل دائمًا.</string>
     <string name="networks_glossary_toggle">شرح المصطلحات</string>
     <string name="networks_glossary_ssid">اسم شبكة Wi-Fi (SSID): الاسم الذي تبثّه شبكة Wi-Fi. يمكن لأي شخص إنشاء شبكة بالاسم نفسه.</string>
@@ -557,7 +557,7 @@
     <string name="status_tap_to_open_list">المس لفتح قائمة الشبكات</string>
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">اللغة</string>
-    <string name="menu_item_all_settings">جميع الإعدادات</string>
+    <string name="menu_item_all_settings">الإعدادات</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">تحذيرات الأمان</string>

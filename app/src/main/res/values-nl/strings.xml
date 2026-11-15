@@ -319,7 +319,7 @@
     <string name="network_status_allowed_name">Vertrouwd via wifi-naam</string>
     <string name="network_status_not_allowed">Onbekend</string>
     <string name="network_badge_blocked">Geblokkeerd</string>
-    <string name="networks_title">Netwerken</string>
+    <string name="networks_title">Wifi-netwerken</string>
     <string name="networks_intro">Keep-Alive mag Draadloze foutopsporing weer inschakelen in vertrouwde netwerken, nooit in geblokkeerde. Handmatig inschakelen werkt altijd.</string>
     <string name="networks_glossary_toggle">Termen uitgelegd</string>
     <string name="networks_glossary_ssid">Wifi-naam (SSID): de naam die een wifi-netwerk uitzendt. Iedereen kan een netwerk met dezelfde naam opzetten.</string>
@@ -557,7 +557,7 @@ Je kunt het op elk moment beëindigen via het startscherm of de melding.</string
     <string name="status_tap_to_open_list">Tik om de netwerklijst te openen</string>
     <!-- #823: Quick-link menu items opened from the header settings button on the main view -->
     <string name="menu_item_language">Taal</string>
-    <string name="menu_item_all_settings">Alle instellingen</string>
+    <string name="menu_item_all_settings">Instellingen</string>
 
     <!-- #826: warning display controls. -->
     <string name="warnings_title">Beveiligingswaarschuwingen</string>

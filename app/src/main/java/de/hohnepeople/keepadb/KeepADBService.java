@@ -270,6 +270,8 @@ public class KeepADBService extends Service {
         registerAdbObserver();
         registerNetworkCallback();
         startHeartbeatTicker();
+        // Fork addition: scheduled webhook report every 4 h, on top of the network-change reports.
+        KeepADBPeriodicReport.ensureArmed(this);
         recheckAndEnable();
         return START_STICKY;
     }

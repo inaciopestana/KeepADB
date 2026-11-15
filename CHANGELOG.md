@@ -26,6 +26,13 @@ are retrospective issue-version records and were never published as separate rel
 ## [1.12.8] - Unreleased
 
 ### Added
+- **Scheduled webhook report every 4 hours (fork):** besides the report after every network
+  change (#867), the monitoring service arms an inexact `AlarmManager` alarm that re-sends the
+  current verified Wi-Fi endpoint to the webhook every 4 hours, so a destination that only keeps
+  messages for a limited time (for example a public ntfy topic) always holds a recent one. It uses
+  the same path as "Report now" (`KeepADBRegisterClient.reportNow`): nothing is sent while
+  synchronization is off or Wi-Fi is down, and a running POST is joined. The chain stops when
+  Keep-Alive is off and is armed again when the service starts. No new permission.
 - **"Recently asked" in the Networks list (#949):** access points KeepADB prompted about and nobody
   answered (for example after the prompt was swiped away on a public Wi-Fi) are listed between the
   current network and the saved ones, newest first, with the time the access point was last detected. "Decide…" opens the

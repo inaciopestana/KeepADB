@@ -31,6 +31,9 @@ import java.util.List;
 final class KeepADBNotification {
     static final String CHANNEL_ID = "keepadb_endpoint";
     static final int NOTIFICATION_ID = 1;
+    /** #956: the channel and notification id of the removed USB-ADB notification. */
+    private static final String OBSOLETE_USB_CHANNEL_ID = "keepadb_usb";
+    private static final int OBSOLETE_USB_NOTIFICATION_ID = 2;
     /** #759: the content tap of the "permission missing" card; its own code, see #603. */
     private static final int REQUEST_CODE_PERMISSION_STEP = 30;
     /** #734: marks the endpoint card, the only notification {@link #refreshIfActive} may redraw. */
@@ -153,6 +156,29 @@ final class KeepADBNotification {
         NotificationManager manager = appContext.getSystemService(NotificationManager.class);
         if (manager == null) return;
         manager.cancel(NOTIFICATION_ID);
+    }
+
+    /**
+     * #956: cancels a USB-ADB notification that is still showing from before the update and deletes
+     * its channel, which would otherwise stay in the system's notification settings of the app.
+     * Idempotent: once the channel is gone nothing is left to do, and nothing else is touched.
+     */
+    static void removeObsoleteUsbNotification(Context context) {
+        NotificationManager manager = context.getSystemService(NotificationManager.class);
+        if (manager == null || manager.getNotificationChannel(OBSOLETE_USB_CHANNEL_ID) == null) {
+            return;
+        }
+        try {
+            for (StatusBarNotification active : manager.getActiveNotifications()) {
+                if (active.getId() == OBSOLETE_USB_NOTIFICATION_ID
+                        && OBSOLETE_USB_CHANNEL_ID.equals(active.getNotification().getChannelId())) {
+                    manager.cancel(OBSOLETE_USB_NOTIFICATION_ID);
+                }
+            }
+        } catch (RuntimeException ignored) {
+            // The channel deletion below removes its notifications as well.
+        }
+        manager.deleteNotificationChannel(OBSOLETE_USB_CHANNEL_ID);
     }
 
     private static void ensureChannel(Context context, NotificationManager manager) {

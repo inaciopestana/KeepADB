@@ -46,6 +46,19 @@ final class KeepADBPreferences {
             "network_onboarding_panel_visible",
             "background_location_panel_visible",
     };
+    // #956: keys of the removed USB-ADB area (notification, host profiles, handover mode). Never
+    // read or written any more; kept only to be deleted (removeObsoleteUsbKeys). The host
+    // profiles hold host names and IP addresses, so they must not outlive the update. A profile
+    // stores its fields as usb_profile_<id>_<field>, which the prefix covers.
+    private static final String[] OBSOLETE_USB_KEYS = {
+            "usb_notification_enabled",
+            "usb_profile_notification_enabled",
+            "usb_profile_next_id",
+            "usb_profile_selected_id",
+            "usb_profile_ids",
+            "usb_wlan_handover_mode",
+    };
+    private static final String OBSOLETE_USB_PROFILE_PREFIX = "usb_profile_";
     // #904: three independent, opt-in privacy switches (all off on a new installation). Each one
     // masks its own area only and is purely a rendering preference, never the toggle facade's own
     // WRITE_SECURE_SETTINGS state and never the real ADB transport.
@@ -854,6 +867,32 @@ final class KeepADBPreferences {
             editor.remove(key);
         }
         if (editor != null) editor.apply();
+    }
+
+    /**
+     * #956: deletes what the removed USB-ADB area stored: the notification and handover settings
+     * and every host profile (name, IP address, host names). Idempotent and silent when nothing is
+     * stored, so a new installation gets no write from it. The assistant's existing/new decision
+     * is frozen first, as {@link #removeObsoleteHomeCardKeys} does: it counts any stored key as
+     * "existing", and removing the only keys of an installation must not turn that into "new".
+     * Runs from {@link KeepADBApplication#onCreate} right after {@link #migratePrivacySplit}, which
+     * has to see the keys that were stored before this deletion.
+     */
+    static void removeObsoleteUsbKeys(Context context) {
+        if (context == null) return;
+        SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        java.util.List<String> found = new java.util.ArrayList<>();
+        for (String key : prefs.getAll().keySet()) {
+            if (key.startsWith(OBSOLETE_USB_PROFILE_PREFIX)
+                    || java.util.Arrays.asList(OBSOLETE_USB_KEYS).contains(key)) {
+                found.add(key);
+            }
+        }
+        if (found.isEmpty()) return;
+        KeepADBOnboarding.isExistingInstall(context);
+        SharedPreferences.Editor editor = prefs.edit();
+        for (String key : found) editor.remove(key);
+        editor.apply();
     }
 
     /**
